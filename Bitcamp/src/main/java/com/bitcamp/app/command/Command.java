@@ -10,7 +10,7 @@ import com.bitcamp.app.enums.Action;
 import com.bitcamp.app.enums.Table;
 
 import lombok.Data;
-
+ 
 @Data
 public class Command{
 	protected String cmd, dir, page, view, data, colum,str;//colum:DB의 metadata
