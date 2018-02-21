@@ -23,7 +23,7 @@ import com.bitcamp.app.factory.ContextFactory;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+	//
 	//싱글톤 패턴 후 @Component로 팩토리를 해주어 static이 되었으므로 @Autowired로 사용 가능
 	@Autowired ContextFactory ContextFactory;	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
