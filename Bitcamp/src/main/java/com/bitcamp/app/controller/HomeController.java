@@ -53,7 +53,7 @@ public class HomeController {
 		model.addAttribute("js",ContextFactory.path("js"));
 		model.addAttribute("css",ContextFactory.path("css"));
 		model.addAttribute("img",ContextFactory.path("img"));
-		return "main/home";
+		return "public:main/home.tiles";
 	}
 }
 		
