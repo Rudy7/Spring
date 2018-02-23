@@ -7,7 +7,6 @@ import java.util.Locale;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +18,7 @@ import com.bitcamp.app.factory.ContextFactory;
  * Handles requests for the application home page.
  * 
  */
-@Controller
+@Controller //경로/확장자를 리턴하도록 한다
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -39,7 +38,8 @@ public class HomeController {
 //		String context= (String)new ContextFactory().create();
 
 		//					EL처리
-		model.addAttribute("serverTime",new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm").format(new Date()));
+		model.addAttribute("serverTime",
+				new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm").format(new Date()));
 		model.addAttribute("context",(String)ContextFactory.create());
 		
 		return "index";
@@ -50,8 +50,6 @@ public class HomeController {
 		logger.info("move to {}.", "main/home");
 		model.addAttribute("context",
 				(String)ContextFactory.create());
-
-		logger.info("move to {}.", "main/home");
 		model.addAttribute("js",ContextFactory.path("js"));
 		model.addAttribute("css",ContextFactory.path("css"));
 		model.addAttribute("img",ContextFactory.path("img"));

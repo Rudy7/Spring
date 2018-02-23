@@ -1,4 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<html>
+<head>
+	<title>HOME</title>
+	<script src="${js}/jquery-3.3.1.min.js"></script>
+</head>
 <link rel="stylesheet" href="${css}/index.css" /><!-- URL 링크 잡기. -->
 <body>
 <div id="wrapper">
@@ -13,7 +18,7 @@
 			</tr>
 			<tr>
 				<td colspan="5">
-				<form id="auth_form" action="${ctx}/user.do">
+				<form id="auth_form" action="mypage">
 					<table id="index_login_box">
 						<tr>
 							<td><input id="index_input_id" name="id" type="text" placeholder="id" tabindex="1" value="sangwoo"/></td>
@@ -43,24 +48,10 @@
 	</article>
 </section>
 </div>
-<%@ include file="../common/foorter.jsp" %>
 </body>
 <script>
-document.querySelector('#go_join_link').addEventListener("click",function () {
-	alert("회원가입");
-	location.href="${pageContext.request.contextPath}/user.do?cmd=move&page=join"
-},false);
-document.querySelector('#go_JDBC_link').addEventListener("click",function(){
-	alert("JDBC");
-	location.href="${pageContext.request.contextPath}/common/jdbc_test.do"
-},false);
-document.querySelector('#go_admin_link').addEventListener("click",function(){
-	alert("관리자");
-	location.href="${pageContext.request.contextPath}/admin/main.do"
-},false);
-document.querySelector('#index_input_btn').addEventListener("click",function(){
-	alert("로그인");
-	document.querySelector('#auth_form').submit();
-},false);
+$('#index_input_btn').on('click',function(){
+	alert('로그인 시작')
+});
 </script>
 </html>
