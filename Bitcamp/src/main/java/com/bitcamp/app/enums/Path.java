@@ -1,47 +1,76 @@
 package com.bitcamp.app.enums;
 
 public enum Path {
-	AUTH{
+	resources, js,img,css,
+	RESOURCES{
 		@Override
 		public String toString() {
 			// TODO Auto-generated method stub
-			return "auth";
+			return "/"+"resources"+"/";
 		}
 	},
-	/*VIEW("/WEB-INF/view/"),
-	SEPARATOR("/"),
-	EXTENSION(".jsp"),
-	DOT(".do");
-	public final String value;	
-	public String getValue() {
-		return value;
-	}*/
-	VIEW{
+	JS{
 		@Override
 		public String toString() {
 			// TODO Auto-generated method stub
-			return "/WEB-INF/view/";
+			return "/"+"resources"+"/"+"js";
 		}
 	},
-	SEPARATOR{
+	IMG{
 		@Override
 		public String toString() {
 			// TODO Auto-generated method stub
-			return "/";
+			return "/"+"resources"+"/"+"png";
 		}
 	},
-	EXTENSION{
+	CSS{
 		@Override
 		public String toString() {
 			// TODO Auto-generated method stub
-			return ".jsp";
+			return "/"+"resources"+"/"+"css";
 		}
-	},
-	DOT{
-		@Override
-		public String toString() {
-			// TODO Auto-generated method stub
-			return ".do";
-		}
-	};
+	}
+//	AUTH{
+//		@Override
+//		public String toString() {
+//			// TODO Auto-generated method stub
+//			return "auth";
+//		}
+//	},
+//	/*VIEW("/WEB-INF/view/"),
+//	SEPARATOR("/"),
+//	EXTENSION(".jsp"),
+//	DOT(".do");
+//	public final String value;	
+//	public String getValue() {
+//		return value;
+//	}*/
+//	VIEW{
+//		@Override
+//		public String toString() {
+//			// TODO Auto-generated method stub
+//			return "/WEB-INF/view/";
+//		}
+//	},
+//	SEPARATOR{
+//		@Override
+//		public String toString() {
+//			// TODO Auto-generated method stub
+//			return "/";
+//		}
+//	},
+//	EXTENSION{
+//		@Override
+//		public String toString() {
+//			// TODO Auto-generated method stub
+//			return ".jsp";
+//		}
+//	},
+//	DOT{
+//		@Override
+//		public String toString() {
+//			// TODO Auto-generated method stub
+//			return ".do";
+//		}
+//	};
 }

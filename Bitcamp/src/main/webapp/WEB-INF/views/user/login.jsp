@@ -2,9 +2,10 @@
 <html>
 <head>
 	<title>HOME</title>
-	<script src="${js}/jquery-3.3.1.min.js"></script>
+	<script src="${path.js}/jquery-3.3.1.min.js"></script>
+	
 </head>
-<link rel="stylesheet" href="${css}/index.css" /><!-- URL 링크 잡기. -->
+<link rel="stylesheet" href="${path.css}/index.css" /><!-- URL 링크 잡기. -->
 <body>
 <div id="wrapper">
 <header id="index_header">

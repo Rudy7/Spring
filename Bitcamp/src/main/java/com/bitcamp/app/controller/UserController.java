@@ -16,10 +16,11 @@ public class UserController {
 	@RequestMapping("/mypage")
 	public String mypage(Model model) {
 		logger.info("AuthController mypage {}.", "ENTERED");
-		model.addAttribute("context",
-				(String)ContextFactory.create());
-		model.addAttribute("js",ContextFactory.path("js"));
-		model.addAttribute("css",ContextFactory.path("css"));
+//		세션 후
+//		model.addAttribute("context",
+//				(String)ContextFactory.create());
+//		model.addAttribute("js",ContextFactory.path("js"));
+//		model.addAttribute("css",ContextFactory.path("css"));
 		return "user/mypage";
 	}
 	@RequestMapping("/burgerking")

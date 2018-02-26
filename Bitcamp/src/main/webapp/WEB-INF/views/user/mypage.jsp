@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>HOME</title>
-	<script src="${js}/jquery-3.3.1.min.js"></script>
+	<script src="${path.js}/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <header id="header">
@@ -12,19 +12,19 @@
 <nav id="nav">
 		<ul style="height: 10%">
 			<li>
-			<a id="burgerking" href="${context}/burgerking">버거킹</a></li>
+			<a id="burgerking" href="${path.context}/burgerking">버거킹</a></li>
 			<li>
-			<a id="kakao" href="${context}/kakao">카카오뱅크</a></li>
+			<a id="kakao" href="${path.context}/kakao">카카오뱅크</a></li>
 			<li>
-			<a id="bitcamp" href="${context}/bitcamp">비트캠프</a></li>
+			<a id="bitcamp" href="${path.context}/bitcamp">비트캠프</a></li>
 			<li>
-			<a id="sktelecom" href="${context}/sktelecom">sk텔레콤</a></li>
+			<a id="sktelecom" href="${path.context}/sktelecom">sk텔레콤</a></li>
 			<li>
-			<a id="lotto" href="${context}/lotto">로또</a></li>
+			<a id="lotto" href="${path.context}/lotto">로또</a></li>
 			<li>
-			<a id ="lotto" href="${context}/mypage" >마이페이지</a></li>
+			<a id ="lotto" href="${path.context}/mypage" >마이페이지</a></li>
 			<li>
-			 <a id ="lotto" href="${context}/logout" >로그아웃</a></li>
+			 <a id ="lotto" href="${path.context}/logout" >로그아웃</a></li>
 		</ul>
 </nav>
 <section>
