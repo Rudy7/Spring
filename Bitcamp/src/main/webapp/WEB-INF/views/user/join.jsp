@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/member.css" />
 <body>
 <%@ include file="../common/header.jsp" %>
 <section>
@@ -12,7 +11,7 @@
 </article>
 <article>
 	<div id="wrapper">
-		<form id="join_form" action="${pageContext.request.contextPath}/user.do?">
+		<form id="join_form" action="${path.context}/user.do?">
 		<table id="join_table">	
 			<tr>
 				<td>ID : </td>

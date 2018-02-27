@@ -1,9 +1,12 @@
 package com.bitcamp.app.domain;
 
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 
 @Data
+@Component
 public class MemberBean {
 	//어소시에이션 방식
 	private String id, pass, name,ssn,phone, email,profile,addr;

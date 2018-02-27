@@ -2,9 +2,12 @@ package com.bitcamp.app.domain;
 
 import java.io.Serializable;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 
 @Data
+@Component
 public class FoodBean implements Serializable{
 	private String foodSeq, menu, price, count;
 

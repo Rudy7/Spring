@@ -1,8 +1,11 @@
 package com.bitcamp.app.domain;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 
 @Data
+@Component
 public class AttendBean {
 	private String id, name, attend;
 	

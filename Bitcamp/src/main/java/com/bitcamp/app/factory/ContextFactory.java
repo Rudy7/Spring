@@ -50,7 +50,7 @@ public class ContextFactory extends Factory{
 //			break;
 //		객체지향
 //		}
-		logger.info("경로 값은 {} 이다",create()+"/resources/");
+		logger.info("경로 값은 {} 이다",path.getCss());
 		return path;	
 	}
 }

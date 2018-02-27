@@ -21,12 +21,12 @@ public class UserController {
 //				(String)ContextFactory.create());
 //		model.addAttribute("js",ContextFactory.path("js"));
 //		model.addAttribute("css",ContextFactory.path("css"));
-		return "user/mypage";
+		return "public:user/mypage.tiles";
 	}
 	@RequestMapping("/burgerking")
 	public String burgerking() {
 		logger.info("AuthController burgerking {}.", "ENTERED");
-		return "burgerking/main";
+		return "public:burgerking/main.tiles";
 	}
 	@RequestMapping("/bitcamp")
 	public String bitcamp() {
@@ -46,7 +46,7 @@ public class UserController {
 	@RequestMapping("/lotto")
 	public String lotto() {
 		logger.info("AuthController lotto {}.", "ENTERED");
-		return "lotto/main";
+		return "public:lotto/main.tiles";
 	}
 	@RequestMapping("/logout")
 	public String logout() {

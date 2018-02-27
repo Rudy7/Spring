@@ -7,11 +7,12 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<script src="${path.js}/jquery-3.3.1.min.js"></script>
 	<script src="${path.js}/bootstrap.js"></script>
 	<link rel="stylesheet" href="${path.css}/bootstrap.css"></link>
 	<link rel="stylesheet" href="${path.css}/bootstrap-theme.css"></link>
-	
+	<link rel="stylesheet" href="${path.css}/style.css" /><!-- URL 링크 잡기. -->
 </head>
 <body>
     <header>
@@ -20,6 +21,7 @@
         </div>
     </header>
     <section>
+    
         <article id="content">
 			<tiles:insertAttribute name="content"/>
         </article>

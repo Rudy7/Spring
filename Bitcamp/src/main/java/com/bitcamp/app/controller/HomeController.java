@@ -27,7 +27,6 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	//싱글톤 패턴 후 @Component로 팩토리를 해주어 static이 되었으므로 @Autowired로 사용 가능
 	@Autowired ContextFactory ContextFactory;
-	@Autowired PathDTO path;
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -53,6 +52,12 @@ public class HomeController {
 //				new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm").format(new Date()));
 //		model.addAttribute("context",(String)ContextFactory.create());
 //		세션 객체화 후
+//		model.addAttribute("serverTime",
+//				new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm").format(new Date()));
+//		
+//		model.addAttribute("path",
+//				ContextFactory.path());
+//		return "index";
 	}
 	//Overloding	서블릿 경로						   enum : method return, 상수
 	@RequestMapping(value="/home", method=RequestMethod.GET)

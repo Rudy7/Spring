@@ -2,34 +2,29 @@
 <html>
 <head>
 	<title>HOME</title>
-	<script src="${path.js}/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <header id="header">
-			<a href="../index.jsp" style="margin: 0 auto;">HOME</a>
-			<a href="../index.jsp" style="margin: 0 auto;">로그아웃</a>
+	<nav id="nav">
+			<ul style="height: 10%">
+				<li>
+				<a id="burgerking" href="${path.context}/burgerking">버거킹</a></li>
+				<li>
+				<a id="kakao" href="${path.context}/kakao">카카오뱅크</a></li>
+				<li>
+				<a id="bitcamp" href="${path.context}/bitcamp">비트캠프</a></li>
+				<li>
+				<a id="sktelecom" href="${path.context}/sktelecom">sk텔레콤</a></li>
+				<li>
+				<a id="lotto" href="${path.context}/lotto">로또</a></li>
+				<li>
+				<a id ="lotto" href="${path.context}/mypage" >마이페이지</a></li>
+				<li>
+				 <a id ="lotto" href="${path.context}/logout" >로그아웃</a></li>
+			</ul>
+	</nav>
 </header>
-<nav id="nav">
-		<ul style="height: 10%">
-			<li>
-			<a id="burgerking" href="${path.context}/burgerking">버거킹</a></li>
-			<li>
-			<a id="kakao" href="${path.context}/kakao">카카오뱅크</a></li>
-			<li>
-			<a id="bitcamp" href="${path.context}/bitcamp">비트캠프</a></li>
-			<li>
-			<a id="sktelecom" href="${path.context}/sktelecom">sk텔레콤</a></li>
-			<li>
-			<a id="lotto" href="${path.context}/lotto">로또</a></li>
-			<li>
-			<a id ="lotto" href="${path.context}/mypage" >마이페이지</a></li>
-			<li>
-			 <a id ="lotto" href="${path.context}/logout" >로그아웃</a></li>
-		</ul>
-</nav>
-<section>
-	<button id="btn">와하하</button>
-</section>
+
 <div id ="wrapper">
 <h2> 마이페이지 </h2>
 <section>
@@ -78,11 +73,14 @@
 </div>
 </body>
 <script>
+$(function(){
+	alert('마이페이지 시작')
+});
 $('#bitcam_passbtn').on('click',function(){
 	alert('비밀번호 변경')
 });
-$('#btn').on('click',function(){
-	alert('로그인 시작')
+$('#bitcam_leavebtn').on('click',function(){
+	alert('탈퇴')
 });
 </script>
 </html>
