@@ -1,9 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="en">
-<body>
-<%@ include file="../common/header.jsp" %>
-<%@ include file="../common/nav.jsp" %>
 <section>
 	<article>
 		<header id="bkmenu_header">
@@ -105,8 +100,5 @@
 </section>
 <aside>
 </aside>
-<%@ include file="../common/foorter.jsp" %>
-</body>
-<link rel="stylesheet" href="../../css/burgerking.css">
-<script src="../../js/burgerking/burger.js" ></script>
-</html>
+<script>
+</script>
