@@ -7,10 +7,10 @@ import lombok.Data;
 
 @Data
 @Component
-public class MemberBean {
+public class MemberDTO {
 	//어소시에이션 방식
 	private String id, pass, name,ssn,phone, email,profile,addr;
-	private AccountBean account;
+	private AccountDTO account;
 	private TelecomBean mobile;
 	@Override
 	public String toString() {

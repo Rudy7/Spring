@@ -6,6 +6,6 @@ import lombok.Data;
 
 @Data
 @Component
-public class AccountBean {
+public class AccountDTO {
 	private String customerNum,accountNum,money,id;
 }
