@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!--HTML5 에서의 헤더. 전의 것은 다른 방식 -->
  <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -14,9 +15,20 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-           	<li><a id="a-login" href="#">
-            	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;user
-           	</a></li>
+                    <li>
+         	  <c:choose>
+                <c:when test="${user == null}">
+                        <a id="a-login" href="#"> 
+                            <span class="glyphicon glyphicon-user" aria-hidden="true">&nbsp;LOGIN</span>
+                        </a>
+                </c:when>
+                <c:otherwise>
+                        <a id="a-logout" href="#">
+                            <span class="glyphicon glyphicon-remove-circle" aria-hidden="true">&nbsp;LOGOUT</span>
+                        </a>
+                </c:otherwise>
+                </c:choose>
+                    </li>                
             <li class="active"><a href="#">
        			<span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;home
             </a></li>
@@ -50,10 +62,15 @@
 	$('.dropdown-menu a').eq(1).on('click',function(){
 		alert('햄버거 먹으러 가자')
 		location.href="${path.context}/burgerking"
+		
 	})
 	
 	$('#a-login').on('click',function(){
 		alert('로그인 이동 !!')
 		location.href="${path.context}/login"
+	})
+	$('#a-logout').on('click',function(){
+		alert('로그인 이동 !!')
+		location.href="${path.context}/logout"
 	})
 </script>

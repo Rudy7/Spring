@@ -7,14 +7,22 @@
 <!-- http://www.mybatis.org/mybatis-3/ko/configuration.html -->
 	<insert id="insertMember" parameterType="cmd">
 	</insert>
-  <select id="selectById" resultType="rmp" parameterType="cmd">
+  <select id="selectById" resultType="member" parameterType="cmd">
+  		SELECT * FROM MEMBER 
+  		WHERE id LIKE #{member.id} 
+  		AND pass LIKE #{member.pass}
   </select>
-  <select id="login" parameterType="cmd"></select>
+  <select id="exist" parameterType="cmd" resultType="int">
+  		SELECT COUNT(*) FROM MEMBER 
+  		WHERE id LIKE #{member.id} 
+  		AND pass LIKE #{member.pass}
+  </select>
   <delete id="delete" parameterType="cmd"></delete>
+</mapper>
 <!-- 	<insert id="insertMember" parameterType="com.bitcamp.app.command.Command">
 	</insert>
   <select id="selectById" resultType="com.bitcamp.app.command.ResultMap" parameterType="com.bitcamp.app.command.Command">
   </select>
   <select id="login" parameterType="com.bitcamp.app.command.Command"></select>
-  <delete id="delete" parameterType="com.bitcamp.app.command.Command"></delete> -->
-</mapper>
+  <delete id="delete" parameterType="com.bitcamp.app.command.Command"></delete>
+  </mapper> -->

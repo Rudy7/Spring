@@ -16,7 +16,6 @@
 			</tr>
 			<tr>
 				<td colspan="5">
-				<form id="auth_form" action="mypage">
 					<table id="index_login_box">
 						<tr>
 							<td><input id="index_input_id" name="id" type="text" placeholder="id" tabindex="1" value="sangwoo"/></td>
@@ -30,7 +29,6 @@
 							</td>
 						</tr>
 					</table>
-				</form>
 				<a id="go_join_link" href="#">
 					처음 오셨나요 
 				</a>
@@ -49,7 +47,10 @@
 </body>
 <script>
 $('#index_input_btn').on('click',function(){
+	var id=$('#index_input_id').val()
+	var pass=$('#index_input_password').val()
 	alert('로그인 시작')
+	location.href="${path.context}/login/"+id+"/"+pass
 });
 </script>
 </html>

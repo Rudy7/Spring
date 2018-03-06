@@ -12,7 +12,7 @@ import com.bitcamp.app.factory.ContextFactory;
 
 @Controller
 public class AuthController {
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AuthController.class);
 	@Autowired ContextFactory ContextFactory;	
 	@RequestMapping("/login")//디폴트가 method=RequestMethod.GET // 이제 속성값이 value 하나만 남으므로 삭제가능
 	public String login(Model model) {
