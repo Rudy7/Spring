@@ -7,7 +7,7 @@ import com.bitcamp.app.domain.AttendBean;
 import com.bitcamp.app.domain.FoodBean;
 import com.bitcamp.app.domain.LottoBean;
 import com.bitcamp.app.domain.MemberDTO;
-import com.bitcamp.app.domain.TelecomBean;
+import com.bitcamp.app.domain.MobileDTO;
 import com.bitcamp.app.enums.Action;
 import com.bitcamp.app.enums.Table;
 
@@ -24,5 +24,5 @@ public class Command{
 	protected AttendBean attend;
 	protected LottoBean lotto;
 	protected FoodBean food;
-	protected TelecomBean mobile;
+	protected MobileDTO mobile;
 }

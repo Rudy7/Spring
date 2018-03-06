@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html>
-<head>
-	<title>HOME</title>
-</head>
-<body>
-<div id ="wrapper">
-<h2> 마이페이지 </h2>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <section>
 <table id="bitc_table">
 	<tr>
@@ -25,7 +19,16 @@
 		<th class="shema">비밀번호</th>
 		<td></td>
 		<th class="shema">전화번호</th>
-		<td></td>
+		<td>
+				<c:choose>
+                <c:when test="${user.phone == null}">
+                            <button id="openPhone">개통하기</button>
+                </c:when>
+                <c:otherwise>
+                            ${user.phone}
+                </c:otherwise>
+                </c:choose>
+		</td>
 	</tr>
 	<tr>
 		<th class="shema">이름</th>
@@ -49,17 +52,20 @@
 </table>
 
 </section>
-</div>
-</body>
 <script>
 $(function(){
 	alert('마이페이지 시작')
-});
+})
 $('#bitcam_passbtn').on('click',function(){
 	alert('비밀번호 변경')
-});
+})
 $('#bitcam_leavebtn').on('click',function(){
 	alert('탈퇴')
-});
+})
+$('#openPhone').on('click',function(){
+	alert('폰 개통하자')
+	location.href="${path.context}/phone"
+})
+
 </script>
 </html>

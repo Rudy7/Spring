@@ -44,6 +44,7 @@
 		      <ul id="ul-util">
 		        <li><a>롯또</a></li>
 		        <li><a>햄버거주문</a></li>
+		        <li><a>휴대폰개폰</a></li>
 		      </ul>
 		    </li>
         <!-- 드롭다운 END -->
@@ -64,13 +65,19 @@
 		location.href="${path.context}/burgerking"
 		
 	})
+	$ulUtil.addClass("dropdown-menu");
+	$('.dropdown-menu a').eq(2).on('click',function(){
+		alert('폰 개통이다')
+		location.href="${path.context}/phone"
+		
+	})
 	
 	$('#a-login').on('click',function(){
 		alert('로그인 이동 !!')
 		location.href="${path.context}/login"
 	})
 	$('#a-logout').on('click',function(){
-		alert('로그인 이동 !!')
+		alert('로그아웃 이동 !!')
 		location.href="${path.context}/logout"
 	})
 </script>

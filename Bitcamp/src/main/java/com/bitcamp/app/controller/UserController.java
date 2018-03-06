@@ -55,7 +55,13 @@ public class UserController {
 //		세션 삭제
 		status.setComplete();
 		logger.info("UserController logout {}.", "ENTERED");
+//		삭제 시키기
 		return "redirect:/login";
+/*		[리다이렉트] 는 jsp로 보내지 않고
+ * 		다시 컨트롤러로 보내는 의미의 접두사이다
+ * 		따라서 /login 는 URL을 의미한다.
+ * 		즉 컨트롤로 다시 가서 맵핑을 타고 실행시킨다
+*/
 	}
 	@RequestMapping("/burgerking")
 	public String burgerking() {
@@ -81,6 +87,24 @@ public class UserController {
 	public String lotto() {
 		logger.info("UserController lotto {}.", "ENTERED");
 		return "public:lotto/main.tiles";
+	}
+	@RequestMapping("/join")
+	public String join() {
+		logger.info("UserController join {}.", "ENTERED");
+		return "public:user/join.tiles";
+	}
+	@RequestMapping("/join/{id}/{pass}/{name}")
+	public String join(
+			@PathVariable("id") String id,
+			@PathVariable("pass") String pass,
+			@PathVariable("name") String name) {
+		member.setId(id);
+		member.setPass(pass);
+		member.setName(name);
+		cmd.setMember(member);
+		mservice.addMember(cmd);
+		logger.info("UserController join to login {}.", "ENTERED");
+		return "redirect:/login";
 	}
 	@RequestMapping("/lotto/{money}")
 	public String money(@PathVariable String money, Model model) {

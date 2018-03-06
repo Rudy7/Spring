@@ -1,9 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="en">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/member.css" />
-<body>
-<%@ include file="../common/header.jsp" %>
 <section>
 <article>
 	<header id="join_header">
@@ -12,7 +7,42 @@
 </article>
 <article>
 	<div id="wrapper">
-		<table id="join_table">	
+		<table id="bkmenu_table">	
+			<tr>
+				<td colspan="3">
+				<select id="telecom">
+					<option value="SKT">SKT</option>
+					<option value="LGU">LGU</option>
+					<option value="KT">KT</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<figure>
+					<img src="${path.img}/galaxy.jpg" /><br />
+					 <figcaption>
+						<input type="radio" name="model" value="coffee" />갤럭시5 ￦600<br/>
+					 </figcaption>
+				</figure>
+				</td>
+				<td>
+				<figure>
+				<img src="${path.img}/iphon.jpg"  /><br />
+					 <figcaption>
+					<input type="radio" name="model" value="salads" />아이폰 ￦1000<br/>
+					 </figcaption>
+				</figure>
+					</td>
+				<td>
+				<figure>
+				<img src="${path.img}/note.jpg"  /><br />
+					 <figcaption>
+					<input type="radio" name="model" value="bagle" />갤럭시노트5 ￦2000<br/>
+					 </figcaption>
+				</figure>
+					</td>
+			</tr>
 			<tr>
 				<th><button id="join_conform_btn">개통 버튼</button></th>
 			</tr>
@@ -20,15 +50,14 @@
 	</div>
 </article>
 </section>
-<%@ include file="../common/foorter.jsp" %>
-</body>
-<link rel="stylesheet" href="<%=application.getContextPath() %>/resources/css/member.css">
 <script>
-document.querySelector('#join_conform_btn').addEventListener("click",
+$('#join_conform_btn').on("click",
 		function () {
-	alert("모바일 개통~");
-	location.href="${pageContext.request.contextPath}/mobile.do?cmd=join&dir=user&page=mypage";
-},false);
+	var telecom = $('#telecom').val() 
+	var model = $('model').val()
+	alert("모바일 개통~")
+	location.href="${path.context}/openPhone"+telecom+"/"+model
+})
 
 </script>
 </html>

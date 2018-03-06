@@ -1,13 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-<html>
-<head>
-	<title>HOME</title>
-</head>
-<body>
-<div id="wrapper">
-<header id="index_header">
-	홈즈
-</header>
 <section id="index_section">
 	<article>
 		<table id="index_table">
@@ -43,14 +34,16 @@
 		</table>
 	</article>
 </section>
-</div>
-</body>
 <script>
 $('#index_input_btn').on('click',function(){
 	var id=$('#index_input_id').val()
 	var pass=$('#index_input_password').val()
 	alert('로그인 시작')
 	location.href="${path.context}/login/"+id+"/"+pass
+});
+$('#go_join_link').on('click',function(){
+	alert('회원가입')
+	location.href="${path.context}/join"
 });
 </script>
 </html>

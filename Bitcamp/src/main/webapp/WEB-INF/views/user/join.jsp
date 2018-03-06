@@ -1,17 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!doctype html>
-<html lang="en">
-<body>
-<%@ include file="../common/header.jsp" %>
-<section>
-<article>
-	<header id="join_header">
-		회원가입
-	</header>
-</article>
-<article>
-	<div id="wrapper">
-		<form id="join_form" action="${path.context}/user.do?">
 		<table id="join_table">	
 			<tr>
 				<td>ID : </td>
@@ -30,7 +17,7 @@
 			</tr>
 			<tr>
 				<td>이름 : </td>
-				<td><input type="text" name="name"/><br /></td>
+				<td><input type="text" id="name" name="name"/><br /></td>
 			</tr>
 			<tr>
 				<td>주민번호 : </td>
@@ -66,23 +53,16 @@
 			<input type="hidden" name="cmd" value="memberjoin"/>
 			<input type="hidden" name="dir" value="user"/>
 			<input type="hidden" name="page" value="login"/>
-		</form>
-	</div>
-</article>
-</section>
-<%@ include file="../common/foorter.jsp" %>
-</body>
-<link rel="stylesheet" href="<%=application.getContextPath() %>/resources/css/member.css">
 <script>
-document.querySelector('#join_conform_btn').addEventListener("click",
-		function () {
-	alert("가입하러간다~");
-	document.querySelector('#join_form').submit();
-},false);
-document.querySelector('#check_dupl').addEventListener("click",
-		function () {
-	alert("첵킹!");
-	document.querySelector('#join_form').submit();
-},false);
+//userid/pass/name
+$('#join_conform_btn').on('click',function(){
+	alert('회원가입 뿅')
+	
+	var id=$('#join_id').val()
+	var pass=$('#join_pass').val()
+	var name=$('#name').val()
+	
+	location.href="${path.context}/join/"+id+"/"+pass+"/"+name
+});
 </script>
 </html>

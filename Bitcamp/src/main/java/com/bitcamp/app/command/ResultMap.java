@@ -7,7 +7,7 @@ import com.bitcamp.app.domain.AttendBean;
 import com.bitcamp.app.domain.FoodBean;
 import com.bitcamp.app.domain.LottoBean;
 import com.bitcamp.app.domain.MemberDTO;
-import com.bitcamp.app.domain.TelecomBean;
+import com.bitcamp.app.domain.MobileDTO;
 
 import lombok.Data;
 
@@ -19,7 +19,7 @@ public class ResultMap {
 	protected AttendBean attend;
 	protected LottoBean lotto;
 	protected FoodBean food;
-	protected TelecomBean mobile;
+	protected MobileDTO mobile;
 	protected String str;
 	protected List<String> list;
 	protected List<MemberDTO> members;
@@ -27,6 +27,6 @@ public class ResultMap {
 	protected List<AttendBean> attends;
 	protected List<LottoBean> lottos;
 	protected List<FoodBean> foods;
-	protected List<TelecomBean> mobiles;
+	protected List<MobileDTO> mobiles;
 	protected int count;
 }

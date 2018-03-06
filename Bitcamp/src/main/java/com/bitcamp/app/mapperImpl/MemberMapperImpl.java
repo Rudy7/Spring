@@ -20,8 +20,7 @@ public class MemberMapperImpl implements MemberMapper{
 
 	@Override
 	public void insertMember(Command cmd) {
-		// TODO Auto-generated method stub
-		
+		sqlSession.selectOne(ns+"insertMember",cmd);
 	}
 
 	@Override

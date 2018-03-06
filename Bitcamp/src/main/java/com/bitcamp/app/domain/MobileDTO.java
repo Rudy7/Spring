@@ -6,6 +6,6 @@ import lombok.Data;
 
 @Data
 @Component
-public class TelecomBean {
-	private String customerNum,userId,phone,regDate;
+public class MobileDTO {
+	private String customerNum,userId,phone,regDate,telecom,model;
 }

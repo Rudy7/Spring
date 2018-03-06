@@ -20,8 +20,7 @@ public class MemberServiceImpl implements MemberService{
 	
 	@Override
 	public void addMember(Command cmd) {
-		// TODO Auto-generated method stub
-		
+		mmapper.insertMember(cmd);
 	}
 
 	@Override
@@ -34,7 +33,7 @@ public class MemberServiceImpl implements MemberService{
 	public boolean exist(Command cmd) {
 		member=cmd.getMember();
 		logger.info("MemberServiceImpl exist() ID{}.", "");
-		return (mmapper.exist(cmd)!=0)?true:false;
+		return mmapper.exist(cmd)!=0;
 	}
 
 	@Override
