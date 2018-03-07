@@ -57,27 +57,27 @@
 	$ulUtil.addClass("dropdown-menu");
 	$('.dropdown-menu a').eq(0).on('click',function(){
 		alert('로또 하러 가자')
-		location.href="${path.context}/lotto"
+		location.href="${path.context}/move/lotto/main"
 	})
 	$ulUtil.addClass("dropdown-menu");
 	$('.dropdown-menu a').eq(1).on('click',function(){
 		alert('햄버거 먹으러 가자')
-		location.href="${path.context}/burgerking"
+		location.href="${path.context}/move/burgerking/main"
 		
 	})
 	$ulUtil.addClass("dropdown-menu");
 	$('.dropdown-menu a').eq(2).on('click',function(){
 		alert('폰 개통이다')
-		location.href="${path.context}/phone"
+		location.href="${path.context}/move/sktelecom/main"
 		
 	})
 	
 	$('#a-login').on('click',function(){
 		alert('로그인 이동 !!')
-		location.href="${path.context}/login"
+		location.href="${path.context}/move/user/login"
 	})
 	$('#a-logout').on('click',function(){
 		alert('로그아웃 이동 !!')
-		location.href="${path.context}/logout"
+		location.href="${path.context}/logout/user/login"
 	})
 </script>

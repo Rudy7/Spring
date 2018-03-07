@@ -14,6 +14,7 @@ import com.bitcamp.app.command.Command;
 import com.bitcamp.app.domain.LottoDTO;
 import com.bitcamp.app.domain.MemberDTO;
 import com.bitcamp.app.factory.ContextFactory;
+import com.bitcamp.app.factory.ShiftFactory;
 import com.bitcamp.app.service.MemberService;
 import com.bitcamp.app.serviceimpl.LottoServiceImpl;
 
@@ -27,6 +28,7 @@ public class UserController {
 	@Autowired LottoDTO lotto;
 	@Autowired Command cmd;
 	@Autowired MemberDTO member;
+	@Autowired ShiftFactory shift;
 	
 	@RequestMapping("/login/{userid}/{password}")
 	public String login(Model model,
@@ -37,11 +39,11 @@ public class UserController {
 		member.setId(userid);
 		member.setPass(password);
 		cmd.setMember(member);
-		String path="public:user/login.tiles";
+		String path=shift.create("user","login");
 		if(mservice.exist(cmd)) {
 			logger.info("UserController login() pass{}.", "UserController exist 내부");
 			model.addAttribute("user",mservice.findMemberById(cmd));
-			path="public:user/mypage.tiles";
+			path=shift.create("user", "mypage");
 		}
 //		세션 후
 //		model.addAttribute("context",
@@ -50,48 +52,18 @@ public class UserController {
 //		model.addAttribute("css",ContextFactory.path("css"));
 		return path;
 	}
-	@RequestMapping("/logout")
+	@RequestMapping("/logout/{dir}/{page}")
 	public String logout(SessionStatus status) {
 //		세션 삭제
 		status.setComplete();
 		logger.info("UserController logout {}.", "ENTERED");
 //		삭제 시키기
-		return "redirect:/login";
+		return shift.redirect("user", "login");
 /*		[리다이렉트] 는 jsp로 보내지 않고
  * 		다시 컨트롤러로 보내는 의미의 접두사이다
  * 		따라서 /login 는 URL을 의미한다.
  * 		즉 컨트롤로 다시 가서 맵핑을 타고 실행시킨다
 */
-	}
-	@RequestMapping("/burgerking")
-	public String burgerking() {
-		logger.info("UserController burgerking {}.", "ENTERED");
-		return "public:burgerking/main.tiles";
-	}
-	@RequestMapping("/bitcamp")
-	public String bitcamp() {
-		logger.info("UserController bitcamp {}.", "ENTERED");
-		return "bitcamp/main";
-	}
-	@RequestMapping("/kakao")
-	public String kakao() {
-		logger.info("UserController kakao {}.", "ENTERED");
-		return "kakao/main";
-	}
-	@RequestMapping("/sktelecom")
-	public String sktelecom() {
-		logger.info("UserController sktelecom {}.", "ENTERED");
-		return "sktelecom/main";
-	}
-	@RequestMapping("/lotto")
-	public String lotto() {
-		logger.info("UserController lotto {}.", "ENTERED");
-		return "public:lotto/main.tiles";
-	}
-	@RequestMapping("/join")
-	public String join() {
-		logger.info("UserController join {}.", "ENTERED");
-		return "public:user/join.tiles";
 	}
 	@RequestMapping("/join/{id}/{pass}/{name}")
 	public String join(
@@ -104,7 +76,8 @@ public class UserController {
 		cmd.setMember(member);
 		mservice.addMember(cmd);
 		logger.info("UserController join to login {}.", "ENTERED");
-		return "redirect:/login";
+		return shift.redirect("user", "login");
+//		서블릿으로 다시 이동
 	}
 	@RequestMapping("/lotto/{money}")
 	public String money(@PathVariable String money, Model model) {
@@ -112,6 +85,6 @@ public class UserController {
 		lotto.setMoney(money);
 		logger.info("로또 번호는 {}.",
 				model.addAttribute("lottos",lottoService.createLottos(lotto)));
-		return "public:lotto/result.tiles";
+		return shift.create("lotto", "result");
 	}
 }

@@ -9,12 +9,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.bitcamp.app.domain.PathDTO;
 import com.bitcamp.app.factory.ContextFactory;
+import com.bitcamp.app.factory.ShiftFactory;
 
 /**
  * Handles requests for the application home page.
@@ -27,6 +29,7 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	//싱글톤 패턴 후 @Component로 팩토리를 해주어 static이 되었으므로 @Autowired로 사용 가능
 	@Autowired ContextFactory ContextFactory;
+	@Autowired ShiftFactory shift;
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -60,10 +63,12 @@ public class HomeController {
 //		return "index";
 	}
 	//Overloding	서블릿 경로						   enum : method return, 상수
-	@RequestMapping(value="/home", method=RequestMethod.GET)
-	public String home(Model model) {
-		logger.info("move to {}.", "main/home");
-		return "public:main/home.tiles";
+	@RequestMapping(value="/move/{dir}/{page}", method=RequestMethod.GET)
+	public String move(
+			@PathVariable("dir")String dir,
+			@PathVariable("page")String page) {
+		logger.info("move to {}.", dir+"/"+page);
+		return shift.create(dir,page);
 //		세션전
 //		model.addAttribute("context",
 //				(String)ContextFactory.create());

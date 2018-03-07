@@ -64,7 +64,7 @@ $('#bitcam_leavebtn').on('click',function(){
 })
 $('#openPhone').on('click',function(){
 	alert('폰 개통하자')
-	location.href="${path.context}/phone"
+	location.href="${path.context}/mobile/open"
 })
 
 </script>

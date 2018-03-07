@@ -9,11 +9,11 @@
 				<td colspan="5">
 					<table id="index_login_box">
 						<tr>
-							<td><input id="index_input_id" name="id" type="text" placeholder="id" tabindex="1" value="sangwoo"/></td>
+							<td><input id="index_input_id" name="id" type="text" placeholder="id" tabindex="1" value="ㅊㅊㅊ"/></td>
 							<td rowspan="2"><button id="index_input_btn">로그인</button></td>
 						</tr>
 						<tr>
-							<td><input id="index_input_password" name="pass" type="password" placeholder="pass" tabindex="2" value="12"/>
+							<td><input id="index_input_password" name="pass" type="password" placeholder="pass" tabindex="2" value="ㅊㅊㅊ"/>
 							<input type="hidden" name="cmd" value="login" />
 							<input type="hidden" name="dir" value="user" />
 							<input type="hidden" name="page" value="mypage" />
@@ -43,7 +43,7 @@ $('#index_input_btn').on('click',function(){
 });
 $('#go_join_link').on('click',function(){
 	alert('회원가입')
-	location.href="${path.context}/join"
+	location.href="${path.context}/move/user/join"
 });
 </script>
 </html>
