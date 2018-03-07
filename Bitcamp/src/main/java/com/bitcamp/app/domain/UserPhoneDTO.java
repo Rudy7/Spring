@@ -6,7 +6,6 @@ import lombok.Data;
 
 @Data
 @Component
-public class MobileDTO {
-	private String seq,
-			model,thumbnail;
+public class UserPhoneDTO {
+	private String phoneid,pseq,mid,phonenum,telecom;
 }

@@ -11,5 +11,4 @@ public interface MobileService {
 	public void openPhone(Command cmd);
 	public ResultMap selectMobile(Command cmd);
 	public List<MobileDTO> phones();
-	
 }

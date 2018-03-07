@@ -20,6 +20,7 @@
     </settings>
     <typeAliases>
         <typeAlias type="com.bitcamp.app.domain.MemberDTO" alias="member"/>
+        <typeAlias type="com.bitcamp.app.domain.UserPhoneDTO" alias="uphone"/>
         <typeAlias type="com.bitcamp.app.domain.MobileDTO" alias="mobile"/>
         <typeAlias type="com.bitcamp.app.command.Command" alias="cmd"/>
         <typeAlias type="com.bitcamp.app.command.ResultMap" alias="rmp"/>
@@ -27,6 +28,7 @@
  <mappers>
      <mapper resource="com/bitcamp/app/mapper/MemberMapper.xml"/>
      <mapper resource="com/bitcamp/app/mapper/MobileMapper.xml"/>
+     <mapper resource="com/bitcamp/app/mapper/UserPhoneMapper.xml"/>
    
  </mappers>
  

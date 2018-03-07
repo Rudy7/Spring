@@ -13,26 +13,26 @@ import com.bitcamp.app.mapper.MemberMapper;
 
 @Repository
 public class MemberMapperImpl implements MemberMapper{
-	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MemberMapperImpl.class);
 	@Autowired MemberDTO member;
 	@Autowired SqlSessionTemplate sqlSession;
-	String ns="com.bitcamp.app.mapperImpl.MemberMapperImpl.";
+//	String ns="com.bitcamp.app.mapperImpl.MemberMapperImpl.";
 
 	@Override
 	public void insertMember(Command cmd) {
-		sqlSession.selectOne(ns+"insertMember",cmd);
+		sqlSession.insert(/*ns+*/"insertMember",cmd);
 	}
 
 	@Override
 	public MemberDTO selectById(Command cmd) {
-		return sqlSession.selectOne(ns+"selectById",cmd);
+		return sqlSession.selectOne(/*ns+*/"selectById",cmd);
 	}
 
 	@Override
 	public int exist(Command cmd) {
 		logger.info("MemberMapperImpl login() {}.", cmd.getMember());
 //		member = ;
-		return sqlSession.selectOne(ns+"exist",cmd);
+		return sqlSession.selectOne(/*ns+*/"exist",cmd);
 	}
 
 	@Override

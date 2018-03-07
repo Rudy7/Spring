@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- http://www.mybatis.org/mybatis-3/ko/getting-started.html -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitcamp.app.mapperImpl.UserPhoneMapperImpl">
+<!-- http://www.mybatis.org/mybatis-3/ko/configuration.html -->
+  <select id="insertPhone" parameterType="cmd">
+  		INSERT INTO USERPHONE VALUES(
+  		#{uPhone.phoneid},#{uPhone.pseq},#{uPhone.mid},#{uPhone.phonenum},#{uPhone.telecom})
+  </select>
+  <delete id="delete" parameterType="cmd"></delete>
+</mapper>

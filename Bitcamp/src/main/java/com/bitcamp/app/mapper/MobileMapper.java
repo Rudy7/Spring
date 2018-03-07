@@ -2,6 +2,7 @@ package com.bitcamp.app.mapper;
 
 import java.util.List;
 
+import com.bitcamp.app.command.Command;
 import com.bitcamp.app.domain.MobileDTO;
 
 public interface MobileMapper {

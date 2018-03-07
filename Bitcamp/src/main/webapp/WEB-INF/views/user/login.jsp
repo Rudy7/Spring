@@ -13,7 +13,7 @@
 							<td rowspan="2"><button id="index_input_btn">로그인</button></td>
 						</tr>
 						<tr>
-							<td><input id="index_input_password" name="pass" type="password" placeholder="pass" tabindex="2" value="ㅊㅊㅊ"/>
+							<td><input id="index_input_password" name="pass" type="password" placeholder="pass" tabindex="2" value="ccc"/>
 							<input type="hidden" name="cmd" value="login" />
 							<input type="hidden" name="dir" value="user" />
 							<input type="hidden" name="page" value="mypage" />
