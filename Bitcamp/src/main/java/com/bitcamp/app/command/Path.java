@@ -1,4 +1,4 @@
-package com.bitcamp.app.domain;
+package com.bitcamp.app.command;
 
 import org.springframework.stereotype.Component;
 
@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @Component
-public class PathDTO {
+public class Path {
 	private String context,js,img,css;
 
 }

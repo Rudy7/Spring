@@ -7,5 +7,5 @@ import lombok.Data;
 @Data
 @Component
 public class AccountDTO {
-	private String customerNum,accountNum,money,id;
+	private String accSeq ,accNum,money,id;
 }

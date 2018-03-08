@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 @Component
-public class FoodBean implements Serializable{
+public class FoodDTO implements Serializable{
 	private String foodSeq, menu, price, count;
 
 	@Override

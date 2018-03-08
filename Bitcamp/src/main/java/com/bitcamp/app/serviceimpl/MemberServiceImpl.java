@@ -1,5 +1,7 @@
 package com.bitcamp.app.serviceimpl;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +26,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public MemberDTO findMemberById(Command cmd) {
+	public MemberDTO findById(Command cmd) {
 		logger.info("MemberServiceImpl findMemberById() ID{}.", member.getId());
 		return mmapper.selectById(cmd);
 	}
@@ -37,9 +39,33 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void deleteMember(Command cmd) {
+	public void removeMember(Command cmd) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void modifyMember(Command cmd) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<MemberDTO> list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<MemberDTO> findByNAME(Command cmd) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int count() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

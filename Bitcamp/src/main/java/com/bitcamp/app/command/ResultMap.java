@@ -3,8 +3,7 @@ package com.bitcamp.app.command;
 import java.util.List;
 
 import com.bitcamp.app.domain.AccountDTO;
-import com.bitcamp.app.domain.AttendBean;
-import com.bitcamp.app.domain.FoodBean;
+import com.bitcamp.app.domain.FoodDTO;
 import com.bitcamp.app.domain.LottoBean;
 import com.bitcamp.app.domain.MemberDTO;
 import com.bitcamp.app.domain.MobileDTO;
@@ -16,17 +15,15 @@ import lombok.Data;
 public class ResultMap {
 	protected MemberDTO member;
 	protected AccountDTO account;
-	protected AttendBean attend;
 	protected LottoBean lotto;
-	protected FoodBean food;
+	protected FoodDTO food;
 	protected MobileDTO mobile;
 	protected String str;
 	protected List<String> list;
 	protected List<MemberDTO> members;
 	protected List<AccountDTO> accounts;
-	protected List<AttendBean> attends;
 	protected List<LottoBean> lottos;
-	protected List<FoodBean> foods;
+	protected List<FoodDTO> foods;
 	protected List<MobileDTO> mobiles;
 	protected int count;
 }

@@ -7,16 +7,16 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import com.bitcamp.app.command.Path;
 import com.bitcamp.app.controller.HomeController;
-import com.bitcamp.app.domain.PathDTO;
-import com.bitcamp.app.enums.Path;
+import com.bitcamp.app.enums.Way;
 
 //static 이 된다
 @Component
 public class ContextFactory extends Factory{
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@Autowired ContextFactory ContextFactory;
-	@Autowired PathDTO path;
+	@Autowired Path path;
 	@Override
 	public Object create() {
 //		ServletRequestAttributes o= (ServletRequestAttributes) RequestContextHolder
@@ -26,12 +26,12 @@ public class ContextFactory extends Factory{
 		return ((ServletRequestAttributes) RequestContextHolder
 				.currentRequestAttributes()).getRequest().getContextPath();
 	}
-	public PathDTO path() {
+	public Path path() {
 		logger.info("ContextFactory path()");
 		path.setContext((String)create());
-		path.setCss(create()+Path.CSS.toString());
-		path.setImg(create()+Path.IMG.toString());
-		path.setJs(create()+Path.JS.toString());
+		path.setCss(create()+Way.CSS.toString());
+		path.setImg(create()+Way.IMG.toString());
+		path.setJs(create()+Way.JS.toString());
 //		초기
 //		public PathDTO path(String tag) {
 //		String path="/resources/";

@@ -6,8 +6,11 @@
 <mapper namespace="com.bitcamp.app.mapperImpl.MobileMapperImpl">
 <!-- http://www.mybatis.org/mybatis-3/ko/configuration.html -->
 	
-  <select id="list" resultType="mobile">
-  		SELECT * FROM Mobile
+  <select id="selectALL" resultType="mobile">
+  		SELECT mob_seq AS mobSeq, thumbnail, model FROM Mobile
+  </select>
+  <select id="select" resultType="mobile">
+  		SELECT mob_seq AS mobSeq, thumbnail, model FROM Mobile
   </select>
   <delete id="delete" parameterType="cmd"></delete>
 </mapper>

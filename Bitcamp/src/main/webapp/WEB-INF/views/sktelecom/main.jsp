@@ -42,8 +42,8 @@
 	     <div class = "thumbnail">
 	        <img src = "${path.img}/mobile/${phone.thumbnail}.jpg" alt = "bagel">
 	        <hr />
-	        <input type="radio" name="seq" value="${phone.seq}"/>
-	        ${phone.seq} ${phone.model}
+	        <input type="radio" name="seq" value="${phone.mobSeq}"/>
+	        ${phone.mobSeq} ${phone.model}
 	     </div>
 	  </div>
 	</c:forEach>

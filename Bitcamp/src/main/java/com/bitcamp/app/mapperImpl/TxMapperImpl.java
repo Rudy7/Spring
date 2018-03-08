@@ -9,48 +9,46 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bitcamp.app.command.Command;
-import com.bitcamp.app.controller.PhoneController;
-import com.bitcamp.app.domain.MobileDTO;
-import com.bitcamp.app.mapper.MobileMapper;
+import com.bitcamp.app.domain.TxDTO;
+import com.bitcamp.app.mapper.TxMapper;
 
 @Repository
-public class MobileMapperImpl implements MobileMapper{
-	private static final Logger logger = LoggerFactory.getLogger(PhoneController.class);
+public class TxMapperImpl implements TxMapper{
+	private static final Logger logger = LoggerFactory.getLogger(MemberMapperImpl.class);
 	@Autowired SqlSessionTemplate sqlSession;
-	String ns="com.bitcamp.app.mapperImpl.MobileMapperImpl.";
 	
 	@Override
-	public List<MobileDTO> selectALL() {
-		logger.info("MobileMapperImpl seq {}","");
-		return sqlSession.selectList(ns+"selectALL");
+	public void insertTx(Command cmd) {
+		logger.info("UserPhoneMapperImpl{}",cmd.getTx());
+		sqlSession.insert("insertTx",cmd);
 	}
 
 	@Override
-	public void insertMobile(Command cmd) {
+	public void updateTx(Command cmd) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void updateMobile(Command cmd) {
+	public void deleteTx(Command cmd) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteMobile(Command cmd) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<MobileDTO> selectByNAME(Command cmd) {
+	public List<TxDTO> selectByALL() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public MobileDTO selectByid(Command cmd) {
+	public List<TxDTO> selectByNAME(Command cmd) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TxDTO selectByid(Command cmd) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -60,6 +58,4 @@ public class MobileMapperImpl implements MobileMapper{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
-
 }

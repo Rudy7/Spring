@@ -30,7 +30,7 @@ public class PhoneController {
 	@Autowired MobileDTO phone;
 	@RequestMapping("/mobile/shop")
 	public String shop(Model model) {
-		List<MobileDTO> phones=mservice.phones();
+		List<MobileDTO> phones=mservice.list();
 		model.addAttribute("phones",phones);
 		logger.info("PhoneController shop {}.", phones);
 		return shift.create("sktelecom", "main");
@@ -46,7 +46,8 @@ public class PhoneController {
 			@PathVariable("modele")String modele) {
 		logger.info("PhoneController openPhone {}.", telecom);
 		logger.info("PhoneController openPhone {}.", modele);
-		mservice.openPhone(cmd);
+		logger.info("PhoneController openPhone addMobile{}.", modele);
+		mservice.addMobile(cmd);
 		return "public:user/mypage.tiles";
 	}
 }

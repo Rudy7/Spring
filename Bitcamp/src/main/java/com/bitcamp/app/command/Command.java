@@ -3,12 +3,11 @@ package com.bitcamp.app.command;
 import org.springframework.stereotype.Component;
 
 import com.bitcamp.app.domain.AccountDTO;
-import com.bitcamp.app.domain.AttendBean;
-import com.bitcamp.app.domain.FoodBean;
+import com.bitcamp.app.domain.FoodDTO;
 import com.bitcamp.app.domain.LottoBean;
 import com.bitcamp.app.domain.MemberDTO;
 import com.bitcamp.app.domain.MobileDTO;
-import com.bitcamp.app.domain.UserPhoneDTO;
+import com.bitcamp.app.domain.TxDTO;
 import com.bitcamp.app.enums.Action;
 import com.bitcamp.app.enums.Table;
 
@@ -22,9 +21,8 @@ public class Command{
 	protected Table table;
 	protected MemberDTO member;
 	protected AccountDTO account;
-	protected AttendBean attend;
 	protected LottoBean lotto;
-	protected FoodBean food;
+	protected FoodDTO food;
 	protected MobileDTO mobile;
-	protected UserPhoneDTO uPhone;
+	protected TxDTO tx;
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bitcamp.app.command.Command;
 import com.bitcamp.app.domain.LottoDTO;
 import com.bitcamp.app.service.LottoService;
 
@@ -61,5 +62,47 @@ public class LottoServiceImpl implements LottoService{
 			}
 		}
 		return ar;
+	}
+
+	@Override
+	public void addLotto(Command cmd) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modifyLotto(Command cmd) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteLotto(Command cmd) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<LottoDTO> list() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<LottoDTO> findByNAME(Command cmd) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public LottoDTO findById(Command cmd) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int count() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

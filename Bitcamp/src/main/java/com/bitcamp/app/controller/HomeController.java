@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.bitcamp.app.domain.PathDTO;
+import com.bitcamp.app.command.Path;
 import com.bitcamp.app.factory.ContextFactory;
 import com.bitcamp.app.factory.ShiftFactory;
 

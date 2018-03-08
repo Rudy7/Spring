@@ -1,6 +1,6 @@
 package com.bitcamp.app.enums;
 
-public enum Path {
+public enum Way {
 	resources, js,img,css,
 	RESOURCES{
 		@Override

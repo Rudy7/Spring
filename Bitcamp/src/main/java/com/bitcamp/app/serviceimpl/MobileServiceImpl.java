@@ -22,24 +22,45 @@ public class MobileServiceImpl implements MobileService{
 	@Autowired Command cmd;
 
 	@Override
-	public void openPhone(Command cmd) {
+	public List<MobileDTO> list() {
+		
+		List<MobileDTO> phones=mmapper.selectALL();
+		
+		return phones;
+	}
+
+	@Override
+	public void addMobile(Command cmd) {
+		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public ResultMap selectMobile(Command cmd) {
+	public void modifyMobile(Command cmd) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeMobile(Command cmd) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<MobileDTO> findListById(Command cmd) {
+		return null;
+	}
+
+	@Override
+	public MobileDTO findById(Command cmd) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<MobileDTO> phones() {
-		String[] models= {"G6","Galaxy Note5","Galaxy Note8","IPhone6","IPhonex","Sony"};
-		String[] thumbnails= {
-				"G6","galaxynote5","galaxynote8","iphone6","iphonex","sony"
-		};
-		List<MobileDTO> phones=mmapper.selectMobile();
-		
-		return phones;
+	public int count() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

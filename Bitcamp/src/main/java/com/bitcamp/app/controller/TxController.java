@@ -13,35 +13,40 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.bitcamp.app.command.Command;
 import com.bitcamp.app.domain.MemberDTO;
-import com.bitcamp.app.domain.UserPhoneDTO;
-import com.bitcamp.app.service.UserPhoneService;
+import com.bitcamp.app.domain.MobileDTO;
+import com.bitcamp.app.domain.TxDTO;
+import com.bitcamp.app.factory.ShiftFactory;
+import com.bitcamp.app.service.TxService;
 
 @SessionAttributes("user")
 @Controller
-public class UserPhoneController {
-	private static final Logger logger = LoggerFactory.getLogger(UserPhoneController.class);
+public class TxController {
+	private static final Logger logger = LoggerFactory.getLogger(TxController.class);
 	@Autowired Command cmd;
-	@Autowired UserPhoneService uservice;
-	@Autowired UserPhoneDTO uPhone;
+	@Autowired TxService uservice;
+	@Autowired TxDTO tx;
+	@Autowired MobileDTO mobile;
+	@Autowired ShiftFactory shift;
 	
 @RequestMapping(value="/mobile/open",method=RequestMethod.POST)
 public String open(Model model,
 		@RequestParam("seq")String seq,
 		@RequestParam("telecom")String telecom,
 		@ModelAttribute("user") MemberDTO member) {
-	logger.info("PhoneController open {}.", seq);
-	logger.info("PhoneController open {}.", telecom);
+	logger.info("UserPhoneController open {}.", seq);
+	logger.info("UserPhoneController open {}.", telecom);
 	String userid=member.getId();
 	String phoneid=userid+seq;
-	logger.info("PhoneController member id {}.", userid);
-	logger.info("PhoneController phoneid {}.", phoneid);
-	uPhone.setPhoneid(phoneid);
-	uPhone.setPseq(seq);
-	uPhone.setMid(userid);
-	uPhone.setTelecom(telecom);
-	cmd.setUPhone(uPhone);
-	logger.info("PhoneController phoneid {}.", cmd.getUPhone());
-	uservice.insertPhoneNum(cmd);
-	return "";
+	logger.info("UserPhoneController member id {}.", userid);
+	logger.info("UserPhoneController phoneid {}.", phoneid);
+	tx.setTxKey(phoneid);
+	mobile.setMobSeq(seq);
+	tx.setMobile(mobile);
+	tx.setUserId(userid);
+	tx.setTelecom(telecom);
+	cmd.setTx(tx);
+	logger.info("UserPhoneController phoneid {}.", cmd.getTx());
+	uservice.addTx(cmd);
+	return shift.create("user", "mypage");
 }
 }
