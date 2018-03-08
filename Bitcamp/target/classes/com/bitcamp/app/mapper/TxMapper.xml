@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- http://www.mybatis.org/mybatis-3/ko/getting-started.html -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitcamp.app.mapperImpl.TxMapperImpl">
+<!-- http://www.mybatis.org/mybatis-3/ko/configuration.html -->
+  <select id="insertTx" parameterType="cmd">
+  		INSERT INTO tx VALUES(
+  		#{tx.txKey},#{tx.userId},
+  		<choose>
+        <when test="tx.food == null">
+            ''
+        </when>
+        <otherwise>
+	 #{tx.food.foodSeq}
+        </otherwise>
+    </choose>,
+    <choose>
+        <when test="tx.count == null">
+            ''
+        </when>
+        <otherwise>
+	 #{tx.count}
+        </otherwise>
+    </choose>,
+    <choose>
+        <when test="tx.total == null">
+            ''
+        </when>
+        <otherwise>
+	 #{tx.total}
+        </otherwise>
+    </choose>,
+    sysdate,
+  		#{tx.phoneNum},#{tx.telecom},
+  		#{tx.mobile.mobSeq})
+  </select>
+  <delete id="delete" parameterType="cmd"></delete>
+</mapper>
