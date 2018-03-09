@@ -13,7 +13,7 @@
 			<tr>
 				<td>
 				<figure>
-					<img src="http://www.bk.com/sites/default/files/02372-2-BK_Web_ChickenCordonBleu_300x270px_CR.jpg" /><br />
+					<img src="${path.img}/burge.jpg" /><br />
 					<figcaption>
 						<input type="checkbox" name="menu" value="hamberger"/>햄버거 ￦11.000<br/>
 						<input type="number" name="hambergercount" min="1" max="10" style="width: 30px;" placeholder="0" />개
@@ -22,7 +22,7 @@
 				</td>
 				<td>
 				<figure>
-					<img src="../../png/cola.jpg"/><br />
+					<img src="${path.img}/cola.jpg"/><br />
 						<figcaption>
 							<input type="checkbox" name="menu" value="coke" />콜라 ￦1,000<br/>
 							<input type="number" name="cokecount" min="1" max="10" style="width: 30px;" placeholder="0" />개
@@ -31,7 +31,7 @@
 				</td>
 				<td>
 				<figure>
-					<img src="../../png/chip.jpg" /><br />
+					<img src="${path.img}/chip.jpg" /><br />
 						 <figcaption>
 							<input type="checkbox" name="menu" value="chip"/>감자칩 ￦1,000<br/>
 							<input type="number" name="chipcount" min="1" max="10" style="width: 30px;" placeholder="0" />개
@@ -42,7 +42,7 @@
 			<tr>
 				<td>
 				<figure>
-					<img src="../../png/coffe.jpg" /><br />
+					<img src="${path.img}/coffe.jpg" /><br />
 					 <figcaption>
 						<input type="checkbox" name="menu" value="coffee" />커피 ￦600<br/>
 						<input type="number" name="coffeecount" min="1" max="10" style="width: 30px;" placeholder="0" />개
@@ -51,7 +51,7 @@
 				</td>
 				<td>
 				<figure>
-				<img src="../../png/salads.jpg"  /><br />
+				<img src="${path.img}/salads.jpg"  /><br />
 					 <figcaption>
 					<input type="checkbox" name="menu" value="salads" />셀러드 ￦1000<br/>
 					<input type="number" name="saladscount" min="1" max="10" style="width: 30px;" placeholder="0" />개
@@ -60,7 +60,7 @@
 					</td>
 				<td>
 				<figure>
-				<img src="../../png/bagle.jpg"  /><br />
+				<img src="${path.img}/bagle.jpg"  /><br />
 					 <figcaption>
 					<input type="checkbox" name="menu" value="bagle" />베이글 ￦2000<br/>
 					<input type="number" name="baglecount" min="1" max="10" style="width: 30px;" placeholder="0" />개

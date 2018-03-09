@@ -19,15 +19,15 @@
 		<th class="shema">비밀번호</th>
 		<td></td>
 		<th class="shema">전화번호</th>
-		<td>
-				<c:choose>
+		<td id="td-phone">
+				<%-- <c:choose>
                 <c:when test="${user.phone == null}">
                             <button id="openPhone">개통하기</button>
                 </c:when>
                 <c:otherwise>
                             ${user.phone}
                 </c:otherwise>
-                </c:choose>
+                </c:choose> --%> 
 		</td>
 	</tr>
 	<tr>
@@ -55,16 +55,28 @@
 <script>
 $(function(){
 	alert('마이페이지 시작')
+	var phone=("${user.phone}"==="")?"개통하기":"010-000-000";
+	$('#td-phone').html(
+			'<button id="openPhone">'+phone+'</button>')		
+	//스트링도 비교함
+	// jsp 출력 branch 문
+	/* $('#td-phone').html(
+		if("${user.phone}"===""){
+				'<button id="openPhone">개통하기</button>'
+		}else{
+				'${user.phone}'
+		}
+	); */
+});
+$('#openPhone').on('click',function(){
+	alert('폰 개통하자')
+	location.href="${path.context}/mobile/shop"
 })
 $('#bitcam_passbtn').on('click',function(){
 	alert('비밀번호 변경')
 })
 $('#bitcam_leavebtn').on('click',function(){
 	alert('탈퇴')
-})
-$('#openPhone').on('click',function(){
-	alert('폰 개통하자')
-	location.href="${path.context}/mobile/shop"
 })
 
 </script>

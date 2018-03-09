@@ -49,6 +49,8 @@ public class UserController {
 		if(mService.exist(cmd)) {
 			logger.info("UserController login() pass{}.", "UserController exist 내부");
 			model.addAttribute("user",mService.findById(cmd));
+			model.addAttribute("phone","010-999-999");
+			model.addAttribute("account","12121212ss");
 			path=shift.create("user", "mypage");
 		}
 //		세션 후

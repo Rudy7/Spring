@@ -45,8 +45,12 @@
 		        <li><a>롯또</a></li>
 		        <li><a>햄버거주문</a></li>
 		        <li><a>휴대폰개폰</a></li>
+		        <li><a>게시판</a></li>
 		      </ul>
 		    </li>
+		    <li><a href="#">
+            	<span id="span-board" class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;board
+            </a></li>
         <!-- 드롭다운 END -->
           </ul>
         </div>
@@ -54,18 +58,28 @@
     </nav>
 <script>
 	var $ulUtil=$("#ul-util");
+	$('#span-board').click(function(){
+		app.path.init("${path.context}")
+		/* move("user/login"); */
+	});
+	$('.dropdown-menu a').eq(3).on('click',function(){
+		alert('게시판')
+		app.path.init("${path.context}")
+		
+	})
+	function move(x){
+		location.href="${path.context}/move/"+x;
+	};
 	$ulUtil.addClass("dropdown-menu");
 	$('.dropdown-menu a').eq(0).on('click',function(){
 		alert('로또 하러 가자')
 		location.href="${path.context}/move/lotto/main"
 	})
-	$ulUtil.addClass("dropdown-menu");
 	$('.dropdown-menu a').eq(1).on('click',function(){
 		alert('햄버거 먹으러 가자')
 		location.href="${path.context}/move/burgerking/main"
 		
 	})
-	$ulUtil.addClass("dropdown-menu");
 	$('.dropdown-menu a').eq(2).on('click',function(){
 		alert('폰 개통이다')
 		location.href="${path.context}/move/sktelecom/main"
