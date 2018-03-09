@@ -14,4 +14,8 @@
 		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
 		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
+	<definition name="index:*.tiles" extends="public">
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}.jsp"/>
+	</definition>
 </tiles-definitions>

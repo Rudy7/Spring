@@ -1,25 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<table>
+<table id="tab-board-list">
 	<tr>
 		<th>글번호</th>
-		<th></th>
-		<th></th>
-		<th></th>
+		<th>ㄱ</th>
+		<th>ㄴ</th>
+		<th>ㄷ</th>
 	</tr>
 	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td></td>
+		<td>1</td>
 		<td></td>
 		<td></td>
 		<td></td>
 	</tr>
 	<tr>
+		<td>2</td>
 		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>3</td>
 		<td></td>
 		<td></td>
 		<td></td>

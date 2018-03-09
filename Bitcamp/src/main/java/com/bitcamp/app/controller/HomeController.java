@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.bitcamp.app.command.Path;
+import com.bitcamp.app.enums.Serv;
+import com.bitcamp.app.enums.Table;
 import com.bitcamp.app.factory.ContextFactory;
 import com.bitcamp.app.factory.ShiftFactory;
 
@@ -38,7 +40,7 @@ public class HomeController {
 		
 		model.addAttribute("path",
 				ContextFactory.path());
-		return "index";
+		return shift.create().toString();
 		
 //		SimpleDateFormat sdf=new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm");
 //		sdf.format(new Date());
