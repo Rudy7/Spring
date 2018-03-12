@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import lombok.Data;
 
 @Data
-@Component
 public abstract class Proxy {
 	List<?> list;
 	Model model;

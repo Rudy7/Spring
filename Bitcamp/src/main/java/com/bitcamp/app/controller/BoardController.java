@@ -30,7 +30,6 @@ public class BoardController {
 	@Autowired BoardService bService;
 	@Autowired Command cmd;
 	@Autowired BoardDTO board;
-	@Autowired Proxy pxy;
 	
 	@RequestMapping("/detail/{seq}")
 	public String boardDetail(Model model,
@@ -47,8 +46,9 @@ public class BoardController {
 		logger.info("BoardController  {}","boardList");
 		
 //		리스트를 페이지 별로 인원 분리해서 보여주기
-		Proxy pxy=new PageProxy(model);
-		pxy.execute(bService.list());
+//		Proxy pxy=new PageProxy(model);
+//		pxy.execute(bService.list());
+		new PageProxy(model).execute(bService.list());
 		
 //		List<BoardDTO> list=bService.list();
 //		model.addAttribute("boards",list);
