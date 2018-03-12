@@ -32,6 +32,7 @@
      <mapper resource="com/bitcamp/app/mapper/MemberMapper.xml"/>
      <mapper resource="com/bitcamp/app/mapper/MobileMapper.xml"/>
      <mapper resource="com/bitcamp/app/mapper/TxMapper.xml"/>
+     <mapper resource="com/bitcamp/app/mapper/BoardMapper.xml"/>
    
  </mappers>
  

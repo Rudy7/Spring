@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- http://www.mybatis.org/mybatis-3/ko/getting-started.html -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitcamp.app.mapperImpl.BoardMapperImpl">
+<!-- http://www.mybatis.org/mybatis-3/ko/configuration.html -->
+	<select id="insertBoard"  parameterType="cmd">
+		INSERT INTO board VALUES(seq.nextval,#{board.title},#{board.content},sysdate,#{board.userid})
+	</select>
+  <select id="selectBoardALL" resultType="board">
+  		SELECT BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid FROM board
+  </select>
+  <select id="selectBoardByid" parameterType="cmd" resultType="board">
+  		SELECT BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid FROM board where BBS_SEQ like #{board.bbsSeq}
+  </select>
+  <delete id="delete" parameterType="cmd"></delete>
+</mapper>

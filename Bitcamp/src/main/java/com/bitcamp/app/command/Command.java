@@ -3,6 +3,7 @@ package com.bitcamp.app.command;
 import org.springframework.stereotype.Component;
 
 import com.bitcamp.app.domain.AccountDTO;
+import com.bitcamp.app.domain.BoardDTO;
 import com.bitcamp.app.domain.FoodDTO;
 import com.bitcamp.app.domain.LottoBean;
 import com.bitcamp.app.domain.MemberDTO;
@@ -25,4 +26,5 @@ public class Command{
 	protected FoodDTO food;
 	protected MobileDTO mobile;
 	protected TxDTO tx;
+	protected BoardDTO board;
 }

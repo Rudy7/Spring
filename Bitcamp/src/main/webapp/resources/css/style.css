@@ -24,7 +24,7 @@ a{text-decoration: none; color: #0000a0;}
 	margin-bottom: 20px;}
 	#nav li{ width: 200px;text-align: center; display: inline-block;list-style: none; padding: 2px;}
 	#nav li a{color: white;font: bold 14px verdana, sans-serif;}
-#footer{height: 20px; margin-top: -10%;}
+#footer{height: 20px; margin-bottom: -10%;}
 
 /* Login */
 @charset "UTF-8";

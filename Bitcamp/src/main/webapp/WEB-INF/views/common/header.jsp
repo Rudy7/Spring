@@ -55,14 +55,14 @@
       </div>
     </nav>
 <script>
-	$('#span-board').click(function(){
+	/* $('#span-board').click(function(){
 		app.board("${path.context}")
-		/* app.path.init("${path.context}") */
-		/* move("user/login"); */
-	});
-	function move(x){
+		 app.path.init("${path.context}")
+		 move("user/login"); 
+	}); */
+	/* function move(x){
 		location.href="${path.context}/move/"+x;
-	};
+	}; */
 	
 	/* var $ulUtil=$("#ul-util");
 	$ulUtil.addClass("dropdown-menu"); */
@@ -77,7 +77,8 @@
 		app.move("sktelecom/main")
 	})
 	$('.dropdown-menu a').eq(3).on('click',function(){
-		app.move("board/list")
+		alert('왜 안되냐 이벤트');
+		app.boardList();
 	})
 	$('.dropdown-menu a').eq(4).on('click',function(){
 		app.move("board/write")
