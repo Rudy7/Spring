@@ -64,7 +64,7 @@ public class PageAdaptor {
 		return startRow;
 	}
 	public void setStartRow(int startRow) {
-		startRow=endRow-blockSize+1;
+		startRow=pageNum*blockSize-blockSize;
 		this.startRow = (startRow<0)?1:startRow;
 	}
 	public int getEndRow() {
@@ -101,12 +101,6 @@ public class PageAdaptor {
 		setStartRow(0);
 		setStartPage(0);
 		setEndPage(0);
-		logger.info("BoardController setTotalCount {}",totalCount);
-		logger.info("BoardController setTotalPageCount {}",totalPageCount);
-		logger.info("BoardController setStartRow {}",startRow);
-		logger.info("BoardController setEndRow {}",endRow);
-		logger.info("BoardController setStartPage {}",startPage);
-		logger.info("BoardController setEndPage {}",endPage);
 	}
 	/* BlockEnd 1 = pageEnd 5
 	 * BlockEnd 2 = pageEnd10

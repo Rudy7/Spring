@@ -25,17 +25,21 @@
  <ul class="pagination">
  <c:if test="${page.startPage!=1}">
    <li>
-     <a href="${path.context}/board/list?pageNum=${page.startPage-page.pageSize}&nowPage=${page.startPage-page.pageSize}" aria-label="Previous">
+   <%-- ${path.context}/board/list?pageNum=${page.startPage-page.pageSize}&nowPage=${page.startPage-page.pageSize} --%>
+     <a href="#"
+     		 onclick="app.boardList(${page.startPage-page.pageSize}); return false;" aria-label="Previous">
        <span aria-hidden="true">&laquo;</span>
      </a>
    </li> 
  </c:if>
    <c:forEach begin="${page.startPage}" end="${page.endPage}" step="1" varStatus="i">
-        <li><a href="${path.context}/board/list?pageNum=${i.index}">${i.index}</a></li>
+        <li><a href="#" onclick="app.boardList(${i.index}); return false;">${i.index}</a></li>
    </c:forEach>
  <c:if test="${page.endPage!=page.totalPageCount}">
    <li>
-     <a href="${path.context}/board/list?pageNum=${page.startPage+page.pageSize}&nowPage=${page.startPage+page.pageSize}" aria-label="Next">
+   <%-- ${path.context}/board/list?pageNum=${page.startPage+page.pageSize}&nowPage=${page.startPage+page.pageSize} --%>
+     <a href="#"
+     		 onclick="app.boardList(${page.startPage+page.pageSize}); return false;" aria-label="Next">
        <span aria-hidden="true">&raquo;</span>
      </a>
    </li>
