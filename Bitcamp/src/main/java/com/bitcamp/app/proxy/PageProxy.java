@@ -1,13 +1,12 @@
-package com.bitcamp.app.adapter;
+package com.bitcamp.app.proxy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 
-import com.bitcamp.app.command.PageAdaptor;
+import com.bitcamp.app.adapter.PageAdaptor;
 import com.bitcamp.app.controller.AuthController;
-import com.bitcamp.app.proxy.Proxy;
 
 public class PageProxy extends Proxy {
 	private static final Logger logger = LoggerFactory.getLogger(PageProxy.class);

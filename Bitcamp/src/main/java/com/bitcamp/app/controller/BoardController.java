@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.bitcamp.app.adapter.PageProxy;
+import com.bitcamp.app.adapter.PageAdaptor;
 import com.bitcamp.app.command.Command;
-import com.bitcamp.app.command.PageAdaptor;
 import com.bitcamp.app.domain.BoardDTO;
 import com.bitcamp.app.domain.MemberDTO;
 import com.bitcamp.app.enums.Serv;
 import com.bitcamp.app.enums.Table;
 import com.bitcamp.app.factory.ShiftFactory;
+import com.bitcamp.app.proxy.PageProxy;
 import com.bitcamp.app.proxy.Proxy;
 import com.bitcamp.app.service.BoardService;
 

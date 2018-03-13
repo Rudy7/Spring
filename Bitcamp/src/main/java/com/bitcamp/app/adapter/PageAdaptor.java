@@ -1,4 +1,4 @@
-package com.bitcamp.app.command;
+package com.bitcamp.app.adapter;
 
 import java.util.List;
 
