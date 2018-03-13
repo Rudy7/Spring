@@ -49,7 +49,7 @@ public class BoardController {
 	}
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	public String boardList(Model model,
-			@RequestParam(value="pageSize",defaultValue="3")String pageSize,
+			@RequestParam(value="pageSize",defaultValue="5")String pageSize,
 			@RequestParam(value="blockSize",defaultValue="5")String blockSize,
 			@RequestParam(value="pageNum",defaultValue="1")String pageNum,
 			@RequestParam(value="nowPage",defaultValue="1")String nowPage) {
