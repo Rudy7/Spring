@@ -20,6 +20,7 @@ public class BoardServiceImpl implements BoardService{
 	@Autowired BoardMapper bmapper;
 	@Override
 	public void addBoard(Command cmd) {
+		logger.info("BoardServiceImpl {}","addBoard");
 		bmapper.insertBoard(cmd);
 	}
 

@@ -16,5 +16,5 @@ public abstract class Proxy {
 		this.model=model;
 		list=new ArrayList<>();
 	}
-	public abstract void execute(List<?> list);
+	public abstract void execute(Object object);
 }

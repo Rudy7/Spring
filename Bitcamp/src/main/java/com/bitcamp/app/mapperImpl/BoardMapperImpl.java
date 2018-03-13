@@ -19,6 +19,8 @@ public class BoardMapperImpl implements BoardMapper{
 	@Autowired SqlSessionTemplate sqlSession;
 	@Override
 	public void insertBoard(Command cmd) {
+		logger.info("BoardMapperImpl {}","insertBoard");
+		logger.info("BoardMapperImpl cmd {}",cmd.getBoard());
 		sqlSession.selectList("insertBoard",cmd);
 	}
 	@Override

@@ -23,8 +23,8 @@ app = (()=>{
 	var boardDetail=x=>{
 		app.board.detail(x);
 	};
-	var boardList=()=>{
-		app.board.list();
+	var boardList=x=>{
+		app.board.list(x);
 	};
 	return {init:init,move:move,boardList:boardList,boardDetail:boardDetail};
 })();
@@ -38,8 +38,8 @@ app.board = (()=>{
 	var setContentView=()=>{
 		
 	};
-	var list=()=>{
-		location.href=route.$()+"/board/list";
+	var list=(x)=>{
+		location.href=route.$()+"/board/list?pageNum="+x;
 	};
 	var detail=x=>{
 		location.href=route.$()+"/board/detail/"+x;

@@ -78,7 +78,7 @@
 	})
 	$('.dropdown-menu a').eq(3).on('click',function(){
 		alert('왜 안되냐 이벤트');
-		app.boardList();
+		app.boardList(1);
 	})
 	$('.dropdown-menu a').eq(4).on('click',function(){
 		app.move("board/write")
