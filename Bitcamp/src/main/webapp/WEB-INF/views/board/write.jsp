@@ -21,6 +21,7 @@
         <div class="col-sm-8"></div>
         <div class="col-sm-4">
             <div class="btn-group">
+            	<a id="fileUpL-btn" href="#" class="btn btn-success">파일전송</a>
                 <a id="submit-btn" href="#" class="btn btn-success">전송</a>
                 <a id="cancel-btn" href="#" class="btn btn-danger">취소</a>
             </div>
@@ -35,5 +36,8 @@ $('#submit-btn').click(function(){
 	.attr('action','${path.context}/board/write')
 	.attr('method','post')
 	.submit();
+});
+$('#fileUpL-btn').click(function(){
+	app.move("board/fileUpload");
 });
 </script>

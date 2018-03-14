@@ -1,7 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!--HTML5 에서의 헤더. 전의 것은 다른 방식 -->
- <nav class="navbar navbar-inverse navbar-fixed-top">
+<style>
+	.jumbotron {
+		margin: 0 auto;
+	}
+	.bg {
+		background-image: url("${path.img}/home/chicago.jpg");
+	}
+</style>
+<div class="jumbotron bg" style="padding-left: 30px;">
+	<h1 style="color: white;">Welcome to Bitcamp</h1>
+</div>
+ <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
