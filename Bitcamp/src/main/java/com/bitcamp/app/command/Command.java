@@ -27,4 +27,5 @@ public class Command{
 	protected MobileDTO mobile;
 	protected TxDTO tx;
 	protected BoardDTO board;
+	protected Page paging;
 }

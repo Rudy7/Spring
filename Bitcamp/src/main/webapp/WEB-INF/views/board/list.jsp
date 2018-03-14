@@ -11,7 +11,7 @@
 		<th>아이디</th>
 		<th>날짜</th>
 	</tr>
-	<c:forEach begin="${page.startRow}" end="${page.endRow}" step="1" varStatus="" var="article" items="${page.list}">
+	<c:forEach begin="0" end="${page.pageSize-1}" step="1" varStatus="" var="article" items="${list}">
 	<tr>
 		<td><a href="${path.context}/board/detail/${article.bbsSeq}">${article.bbsSeq}</a></td>
 		<td><a href="#" onclick="app.boardDetail(${article.bbsSeq}); return false;">

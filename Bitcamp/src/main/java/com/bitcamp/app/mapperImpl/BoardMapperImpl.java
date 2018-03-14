@@ -21,12 +21,12 @@ public class BoardMapperImpl implements BoardMapper{
 	public void insertBoard(Command cmd) {
 		logger.info("BoardMapperImpl {}","insertBoard");
 		logger.info("BoardMapperImpl cmd {}",cmd.getBoard());
-		sqlSession.selectList("insertBoard",cmd);
+		sqlSession.insert("insertBoard",cmd);
 	}
 	@Override
 	public void updateBoard(Command cmd) {
 		logger.info("BoardMapperImpl updateBoard cmd {}",cmd.getBoard());
-		sqlSession.selectList("updateBoard",cmd);
+		sqlSession.update("updateBoard",cmd);
 	}
 	@Override
 	public void deleteBoard(Command cmd) {
@@ -34,9 +34,9 @@ public class BoardMapperImpl implements BoardMapper{
 		
 	}
 	@Override
-	public List<BoardDTO> selectByALL() {
+	public List<BoardDTO> selectByALL(Command cmd) {
 		logger.info("BoardMapperImpl {}","selectALL");
-		return sqlSession.selectList("selectBoardALL");
+		return sqlSession.selectList("selectBoardALL",cmd);
 	}
 	@Override
 	public List<BoardDTO> selectByNAME(Command cmd) {
@@ -50,7 +50,6 @@ public class BoardMapperImpl implements BoardMapper{
 	}
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
-		return 0;
+		return sqlSession.selectOne("count");
 	}
 }

@@ -37,9 +37,9 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public List<BoardDTO> list() {
+	public List<BoardDTO> list(Command cmd) {
 		logger.info("BoardServiceImpl {}","List");
-		return bmapper.selectByALL();
+		return bmapper.selectByALL(cmd);
 	}
 
 	@Override
@@ -56,8 +56,7 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
-		return 0;
+		return bmapper.count();
 	}
 
 }

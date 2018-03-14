@@ -9,9 +9,16 @@
 		INSERT INTO board 
 		VALUES(seq.nextval,#{board.title},#{board.content},sysdate,#{board.userid})
 	</select>
-  <select id="selectBoardALL" resultType="board">
-  		SELECT BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid 
-  		FROM board
+  <select id="selectBoardALL" resultType="board" parameterType="cmd">
+  		SELECT *
+			FROM 
+				(SELECT *
+		  		FROM
+		  				(SELECT ROWNUM rownu, BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid 
+		  				FROM board) 
+		  		WHERE #{paging.endRow} >= rownu ) 
+  		WHERE rownu >= #{paging.startRow}
+  		<!-- WHERE #{paging.endRow} > ROWNUM AND ROWNUM > #{paging.startRow} -->
   </select>
   <select id="selectBoardByid" parameterType="cmd" resultType="board">
   		SELECT BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid 
@@ -23,6 +30,9 @@
 		SET title = #{board.title}, content = #{board.content}
 		WHERE BBS_SEQ like #{board.bbsSeq} AND id like #{board.userid}
   </select>
- 
+ <select id="count" resultType="int">
+  		SELECT count(*) 
+  		FROM board
+  </select>
   <delete id="delete" parameterType="cmd"></delete>
 </mapper>

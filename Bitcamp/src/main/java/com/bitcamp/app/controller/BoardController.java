@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.bitcamp.app.adapter.PageAdaptor;
 import com.bitcamp.app.command.Command;
+import com.bitcamp.app.command.Page;
 import com.bitcamp.app.domain.BoardDTO;
 import com.bitcamp.app.domain.MemberDTO;
 import com.bitcamp.app.enums.Serv;
@@ -35,7 +36,29 @@ public class BoardController {
 	@Autowired BoardService bService;
 	@Autowired Command cmd;
 	@Autowired BoardDTO board;
-	@Autowired PageAdaptor page;
+	@Autowired PageAdaptor paging;
+	@Autowired Page page;
+	@Autowired PageProxy pxy;
+	
+	@RequestMapping(value="/list",method=RequestMethod.GET)
+	public String boardList(Model model,
+			@RequestParam(value="pageSize",defaultValue="5")String pageSize,
+			@RequestParam(value="blockSize",defaultValue="5")String blockSize,
+			@RequestParam(value="pageNum",defaultValue="1")String pageNum,
+			@RequestParam(value="nowPage",defaultValue="1")String nowPage) {
+		page.setPageNum(Integer.parseInt(pageNum));
+		page.setPageSize(Integer.parseInt(pageSize));
+		page.setNowPage(Integer.parseInt(nowPage));
+		page.setBlockSize(Integer.parseInt(blockSize));
+		pxy.execute(model, page);
+		
+		logger.info("BoardController boardList {}",page);
+		
+//		List<BoardDTO> list=bService.list();
+//		model.addAttribute("boards",list);
+//		model.addAttribute("count",list.size());
+		return shift.create(Table.board.toString(),Serv.list.toString());
+	}
 	
 	@RequestMapping("/detail/{seq}")
 	public String boardDetail(Model model,
@@ -47,29 +70,7 @@ public class BoardController {
 		model.addAttribute("board",bService.findById(cmd));
 		return shift.create(Table.board.toString(),Serv.detail.toString());
 	}
-	@RequestMapping(value="/list",method=RequestMethod.GET)
-	public String boardList(Model model,
-			@RequestParam(value="pageSize",defaultValue="5")String pageSize,
-			@RequestParam(value="blockSize",defaultValue="5")String blockSize,
-			@RequestParam(value="pageNum",defaultValue="1")String pageNum,
-			@RequestParam(value="nowPage",defaultValue="1")String nowPage) {
-//		pageNum을 기준으로 startPage와 endPage를 구한다.
-//		리스트를 페이지 별로 인원 분리해서 보여주기
-//		Proxy pxy=new PageProxy(model);
-//		pxy.execute(bService.list());
-		page.setPageNum(Integer.parseInt(pageNum));
-		page.setPageSize(Integer.parseInt(pageSize));
-		page.setNowPage(Integer.parseInt(nowPage));
-		page.setBlockSize(Integer.parseInt(blockSize));
-		page.setList(bService.list());
-		new PageProxy(model).execute(page);
-		logger.info("BoardController boardList {}",page);
-		
-//		List<BoardDTO> list=bService.list();
-//		model.addAttribute("boards",list);
-//		model.addAttribute("count",list.size());
-		return shift.create(Table.board.toString(),Serv.list.toString());
-	}
+	
 	@RequestMapping(value="/write", method=RequestMethod.POST)
 	public String boardWrite(
 			Model model,
