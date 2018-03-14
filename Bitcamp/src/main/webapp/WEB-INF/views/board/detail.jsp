@@ -11,6 +11,7 @@
     <!-- 글번호, 제목, 작성자, 작성일 -->
     <form id="form-input">
         <div class="form-group">
+            글번호 : <input type="text" name="broSeq" value="${board.bbsSeq}"/>
             <label for="usr">제목</label>
             <input name="brotitle" type="text" class="form-control" value="${board.title}"><br/>
             <label for="comment">내용</label>
@@ -28,11 +29,10 @@
     </div>
 </div>
 <script>
-
 $('#submit-btn').click(function(){
 	alert('글쓰기 작성')
 	$('#form-input')
-	.attr('action','${path.context}/board/write')
+	.attr('action','${path.context}/board/update')
 	.attr('method','post')
 	.submit();
 });

@@ -53,8 +53,7 @@ public class BoardController {
 			@RequestParam(value="blockSize",defaultValue="5")String blockSize,
 			@RequestParam(value="pageNum",defaultValue="1")String pageNum,
 			@RequestParam(value="nowPage",defaultValue="1")String nowPage) {
-		logger.info("BoardController pageNum {}",pageNum);
-		
+//		pageNum을 기준으로 startPage와 endPage를 구한다.
 //		리스트를 페이지 별로 인원 분리해서 보여주기
 //		Proxy pxy=new PageProxy(model);
 //		pxy.execute(bService.list());
@@ -84,6 +83,24 @@ public class BoardController {
 		board.setUserid(member.getId());
 		cmd.setBoard(board);
 		bService.addBoard(cmd);
+		return shift.create(Table.board.toString(),Serv.list.toString());
+//		return shift.redirect(Table.board.toString(),Serv.list.toString());
+	}
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public String boardUpdate(
+			Model model,
+			@RequestParam("brocontent")String brocontent,
+			@RequestParam("brotitle")String brotitle,
+			@RequestParam("broSeq")String bbsSeq,
+			@ModelAttribute("user") MemberDTO member) {
+		logger.info("BoardController boardUpdate brotitle {}",brotitle);
+		logger.info("BoardController boardUpdate brocontent {}",brocontent);
+		board.setBbsSeq(bbsSeq);
+		board.setContent(brocontent);
+		board.setTitle(brotitle);
+		board.setUserid(member.getId());
+		cmd.setBoard(board);
+		bService.modifyBoard(cmd);
 		return shift.create(Table.board.toString(),Serv.list.toString());
 //		return shift.redirect(Table.board.toString(),Serv.list.toString());
 	}

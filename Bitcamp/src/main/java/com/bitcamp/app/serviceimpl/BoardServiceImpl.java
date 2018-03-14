@@ -26,8 +26,8 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public void modifyBoard(Command cmd) {
-		// TODO Auto-generated method stub
-		
+		logger.info("BoardServiceImpl {}","modifyBoard");
+		bmapper.updateBoard(cmd);
 	}
 
 	@Override

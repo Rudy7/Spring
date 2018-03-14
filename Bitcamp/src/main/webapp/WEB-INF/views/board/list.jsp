@@ -3,6 +3,7 @@
 <div>
 	총계시글 =  ${page.totalCount} 개
 </div>
+<div>
 <table id="tab-board-list">
 	<tr>
 		<th>글 번호</th>
@@ -27,7 +28,7 @@
    <li>
    <%-- ${path.context}/board/list?pageNum=${page.startPage-page.pageSize}&nowPage=${page.startPage-page.pageSize} --%>
      <a href="#"
-     		 onclick="app.boardList(${page.startPage-page.pageSize}); return false;" aria-label="Previous">
+     		 onclick="app.boardList(${page.startPage-1}); return false;" aria-label="Previous">
        <span aria-hidden="true">&laquo;</span>
      </a>
    </li> 
@@ -39,12 +40,13 @@
    <li>
    <%-- ${path.context}/board/list?pageNum=${page.startPage+page.pageSize}&nowPage=${page.startPage+page.pageSize} --%>
      <a href="#"
-     		 onclick="app.boardList(${page.startPage+page.pageSize}); return false;" aria-label="Next">
+     		 onclick="app.boardList(${page.endPage+1}); return false;" aria-label="Next">
        <span aria-hidden="true">&raquo;</span>
      </a>
    </li>
  </c:if>
  </ul>
+</div>
 </div>
 <script>
 </script>

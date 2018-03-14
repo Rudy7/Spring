@@ -6,13 +6,23 @@
 <mapper namespace="com.bitcamp.app.mapperImpl.BoardMapperImpl">
 <!-- http://www.mybatis.org/mybatis-3/ko/configuration.html -->
 	<select id="insertBoard"  parameterType="cmd">
-		INSERT INTO board VALUES(seq.nextval,#{board.title},#{board.content},sysdate,#{board.userid})
+		INSERT INTO board 
+		VALUES(seq.nextval,#{board.title},#{board.content},sysdate,#{board.userid})
 	</select>
   <select id="selectBoardALL" resultType="board">
-  		SELECT BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid FROM board
+  		SELECT BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid 
+  		FROM board
   </select>
   <select id="selectBoardByid" parameterType="cmd" resultType="board">
-  		SELECT BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid FROM board where BBS_SEQ like #{board.bbsSeq}
+  		SELECT BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid 
+  		FROM board 
+  		WHERE BBS_SEQ like #{board.bbsSeq}
   </select>
+  <select id="updateBoard" parameterType="cmd" resultType="board">
+  		UPDATE board
+		SET title = #{board.title}, content = #{board.content}
+		WHERE BBS_SEQ like #{board.bbsSeq} AND id like #{board.userid}
+  </select>
+ 
   <delete id="delete" parameterType="cmd"></delete>
 </mapper>

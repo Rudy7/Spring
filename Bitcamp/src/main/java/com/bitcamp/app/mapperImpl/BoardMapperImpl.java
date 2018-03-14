@@ -25,8 +25,8 @@ public class BoardMapperImpl implements BoardMapper{
 	}
 	@Override
 	public void updateBoard(Command cmd) {
-		// TODO Auto-generated method stub
-		
+		logger.info("BoardMapperImpl updateBoard cmd {}",cmd.getBoard());
+		sqlSession.selectList("updateBoard",cmd);
 	}
 	@Override
 	public void deleteBoard(Command cmd) {

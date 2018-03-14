@@ -13,16 +13,16 @@ import lombok.Data;
 @Component
 public class PageAdaptor {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
-	int nowPage//한화면 출력될 페이지 수
-		,pageNum
+	int nowPage//현재 위치한 페이지
 		,totalCount//리스트 총 갯수
-		,pageSize//페이지 총 갯수
-		,blockSize //한화면에 출력할 페이지 갯수
-		,startRow// 페이지 숫자
-		,endRow// 페이지 끝자리
+		,blockSize //화면에 출력할 리스트 갯수
+		,startRow// 화면의 리스트 시작
+		,endRow// 화면의 리스트 끝
+		,pageNum //이동할 페이지
+		,startPage// 화면의 페이지 시작
+		,endPage// 화면의 페이지 끝
+		,pageSize//화면에 보여줄 이동할 페이지 숫자
 		,totalPageCount//페이지 총 갯수
-		,startPage// 페이지 숫자
-		,endPage// 페이지 끝자리
 		;
 	public int getNowPage() {
 		return nowPage;
