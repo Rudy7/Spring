@@ -14,8 +14,10 @@
 			FROM 
 				(SELECT *
 		  		FROM
-		  				(SELECT ROWNUM rownu, BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid 
-		  				FROM board) 
+		  				(SELECT ROWNUM AS rownu, BBS_SEQ AS bbsSeq,title,content,regdate,id AS userid 
+		  				FROM
+							(SELECT * FROM board
+              				ORDER BY BBS_SEQ desc)) 
 		  		WHERE #{paging.endRow} >= rownu ) 
   		WHERE rownu >= #{paging.startRow}
   		<!-- WHERE #{paging.endRow} > ROWNUM AND ROWNUM > #{paging.startRow} -->
