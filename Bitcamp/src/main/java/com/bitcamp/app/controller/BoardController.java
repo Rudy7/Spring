@@ -114,6 +114,7 @@ public class BoardController {
 	@RequestMapping(value="/fileUpload", method=RequestMethod.POST)
 	public String fileUpload(FileProxy pxy,Model model) throws IllegalStateException, IOException {
 		logger.info("BoardController fileUpload");
+		//어플리케이션 컨텍스트의 bean으로 인해 파일명 사용할수 있다.
 		String fileName=pxy.getFile().getOriginalFilename();
 		String path=ImageRepo.UPLOAD_PATH.toString()+fileName;
 		File files=new File(path);

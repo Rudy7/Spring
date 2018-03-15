@@ -37,10 +37,10 @@
 		<img src="http://farm4.staticflickr.com/3721/9207329484_ba28755ec4_o.jpg" width="107" height="75">
 	</a>
 	
-	
-	
+		<!-- 파일 업로드 버튼 -->
 	<!-- link that opens popup -->
     <a href="#form-fileupload"  class="popup-with-form"><button>파일전송</button></a>
+	<!-- 파일 업로드 폼 -->
 	<!-- form itself -->
 	<form id="form-fileupload" class="white-popup mfp-hide"
 	action="${path.context}/board/fileUpload"
