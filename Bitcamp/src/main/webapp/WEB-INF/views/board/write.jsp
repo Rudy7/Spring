@@ -14,7 +14,8 @@
             <label for="usr">제목</label>
             <input name="brotitle" type="text" class="form-control"><br/>
             <label for="comment">내용</label>
-            <textarea name="brocontent" class="form-control" rows="15" ></textarea>
+			            <textarea name="brocontent" id="contents" class="form-control" rows="15" ></textarea>
+            			<img src="${path.img}/${pngName}" style="width: 80px;height: 80px;" alt="" />
         </div>
     </form>
     <div class="row">

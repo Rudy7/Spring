@@ -51,7 +51,7 @@
 		</property>
 	</bean> 
 	
-	<!-- 파일이름을 받을수 있게 되어있다 -->
+	<!-- file이라는 파라미터 이름으로 컨트롤에서 파일이름을 받을수 있게 해준다 -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 	
 	<!-- 서블릿 경로

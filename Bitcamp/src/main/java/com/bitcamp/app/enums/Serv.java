@@ -1,5 +1,5 @@
 package com.bitcamp.app.enums;
 
 public enum Serv {
-	list,detail
+	list,detail,write
 }

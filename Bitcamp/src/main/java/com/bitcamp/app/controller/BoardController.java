@@ -1,5 +1,7 @@
 package com.bitcamp.app.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +23,7 @@ import com.bitcamp.app.command.Command;
 import com.bitcamp.app.command.Page;
 import com.bitcamp.app.domain.BoardDTO;
 import com.bitcamp.app.domain.MemberDTO;
+import com.bitcamp.app.enums.ImageRepo;
 import com.bitcamp.app.enums.Serv;
 import com.bitcamp.app.enums.Table;
 import com.bitcamp.app.factory.ShiftFactory;
@@ -109,12 +112,16 @@ public class BoardController {
 //		return shift.redirect(Table.board.toString(),Serv.list.toString());
 	}
 	@RequestMapping(value="/fileUpload", method=RequestMethod.POST)
-	public String fileUpload(FileProxy file,Model model) {
-		String fileName=file.getFile().getOriginalFilename();
+	public String fileUpload(FileProxy pxy,Model model) throws IllegalStateException, IOException {
+		logger.info("BoardController fileUpload");
+		String fileName=pxy.getFile().getOriginalFilename();
+		String path=ImageRepo.UPLOAD_PATH.toString()+fileName;
+		File files=new File(path);
+		pxy.getFile().transferTo(files);
 		
-		logger.info("BoardController fileUpload {}","");
-		logger.info("BoardController fileUpload fileName {}",fileName);
+		logger.info("BoardController fileUpload fileName {}",path);
+		model.addAttribute("pngName",fileName);
 		
-		return "";
+		return shift.create(Table.board.toString(),Serv.write.toString());
 	}
 }
