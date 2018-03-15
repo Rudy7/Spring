@@ -4,9 +4,17 @@
    
 }
 #content{
-	margin-top: 300px;
+	margin-bottom: 0px;
 }
-
+ /* Magnific Popup by default doesn’t apply any styles to it, except vertical centering */
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 1000px;
+  margin: 20px auto;
+}
 /* common */
 *{margin:0px; padding: 0px;}
 #centier{margin: 0 auto; text-align: center;}

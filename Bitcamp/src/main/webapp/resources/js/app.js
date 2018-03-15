@@ -1,7 +1,7 @@
 /**
  * 인터프리터 언이이다 고로 jsp 언어인 ${path.context} 는 작동 안한다
  * 공통 JavaScript 기능
-
+ * 
 */
 var app=app || {};
 var route = route || {};

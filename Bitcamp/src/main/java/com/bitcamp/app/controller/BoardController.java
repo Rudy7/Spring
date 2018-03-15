@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,7 @@ import com.bitcamp.app.domain.MemberDTO;
 import com.bitcamp.app.enums.Serv;
 import com.bitcamp.app.enums.Table;
 import com.bitcamp.app.factory.ShiftFactory;
+import com.bitcamp.app.proxy.FileProxy;
 import com.bitcamp.app.proxy.PageProxy;
 import com.bitcamp.app.proxy.Proxy;
 import com.bitcamp.app.service.BoardService;
@@ -38,7 +40,8 @@ public class BoardController {
 	@Autowired BoardDTO board;
 	@Autowired PageAdaptor paging;
 	@Autowired Page page;
-	@Autowired PageProxy pxy;
+	@Autowired PageProxy pagePxy;
+	@Autowired FileProxy filePxy;
 	
 	@RequestMapping(value="/list",method=RequestMethod.GET)
 	public String boardList(Model model,
@@ -50,7 +53,7 @@ public class BoardController {
 		page.setPageSize(Integer.parseInt(pageSize));
 		page.setNowPage(Integer.parseInt(nowPage));
 		page.setBlockSize(Integer.parseInt(blockSize));
-		pxy.execute(model, page);
+		pagePxy.execute(model, page);
 		
 		logger.info("BoardController boardList {}",page);
 		
@@ -104,5 +107,14 @@ public class BoardController {
 		bService.modifyBoard(cmd);
 		return shift.create(Table.board.toString(),Serv.list.toString());
 //		return shift.redirect(Table.board.toString(),Serv.list.toString());
+	}
+	@RequestMapping(value="/fileUpload", method=RequestMethod.POST)
+	public String fileUpload(FileProxy file,Model model) {
+		String fileName=file.getFile().getOriginalFilename();
+		
+		logger.info("BoardController fileUpload {}","");
+		logger.info("BoardController fileUpload fileName {}",fileName);
+		
+		return "";
 	}
 }
